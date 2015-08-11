@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */; };
+		41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */; };
+		41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */; };
+		41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */; };
+		41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */; };
+		41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA481B7A931900EBD135 /* AppDelegate.m */; };
+		41DECA521B7A932700EBD135 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA501B7A932700EBD135 /* Info.plist */; };
+		41DECA531B7A932700EBD135 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA511B7A932700EBD135 /* main.m */; };
+		41DECA551B7A934100EBD135 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA541B7A934100EBD135 /* Images.xcassets */; };
+		41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA571B7A935400EBD135 /* LaunchScreen.xib */; };
+		41DECA5D1B7A93F700EBD135 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA5B1B7A93F700EBD135 /* MapViewController.m */; };
+		41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA5C1B7A93F700EBD135 /* MapViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		41DECA221B7A920100EBD135 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41DECA061B7A920100EBD135 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41DECA0D1B7A920100EBD135;
+			remoteInfo = HACClusterMapViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		41DECA0E1B7A920100EBD135 /* HACClusterMapViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HACClusterMapViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		41DECA211B7A920100EBD135 /* HACClusterMapViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HACClusterMapViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		41DECA261B7A920100EBD135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HACClusterMapViewControllerTests.m; sourceTree = "<group>"; };
+		41DECA3B1B7A92DD00EBD135 /* HACAnnotationMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACAnnotationMap.h; sourceTree = "<group>"; };
+		41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACAnnotationMap.m; sourceTree = "<group>"; };
+		41DECA3D1B7A92DD00EBD135 /* HACAnnotationMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACAnnotationMapView.h; sourceTree = "<group>"; };
+		41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACAnnotationMapView.m; sourceTree = "<group>"; };
+		41DECA3F1B7A92DD00EBD135 /* HACMapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACMapLayoutGuide.h; sourceTree = "<group>"; };
+		41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACMapLayoutGuide.m; sourceTree = "<group>"; };
+		41DECA411B7A92DD00EBD135 /* HACClusterMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACClusterMapViewController.h; sourceTree = "<group>"; };
+		41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACClusterMapViewController.m; sourceTree = "<group>"; };
+		41DECA471B7A931900EBD135 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		41DECA481B7A931900EBD135 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		41DECA501B7A932700EBD135 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExampleApp/Info.plist; sourceTree = SOURCE_ROOT; };
+		41DECA511B7A932700EBD135 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ExampleApp/main.m; sourceTree = SOURCE_ROOT; };
+		41DECA541B7A934100EBD135 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		41DECA581B7A935400EBD135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		41DECA5A1B7A93F700EBD135 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		41DECA5B1B7A93F700EBD135 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		41DECA5C1B7A93F700EBD135 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41DECA0B1B7A920100EBD135 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41DECA1E1B7A920100EBD135 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		41DECA051B7A920100EBD135 = {
+			isa = PBXGroup;
+			children = (
+				41DECA311B7A927200EBD135 /* ExampleApp */,
+				41DECA101B7A920100EBD135 /* HACClusterMapViewController */,
+				41DECA241B7A920100EBD135 /* HACClusterMapViewControllerTests */,
+				41DECA0F1B7A920100EBD135 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		41DECA0F1B7A920100EBD135 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA0E1B7A920100EBD135 /* HACClusterMapViewController.app */,
+				41DECA211B7A920100EBD135 /* HACClusterMapViewControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		41DECA101B7A920100EBD135 /* HACClusterMapViewController */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA3B1B7A92DD00EBD135 /* HACAnnotationMap.h */,
+				41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */,
+				41DECA3D1B7A92DD00EBD135 /* HACAnnotationMapView.h */,
+				41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */,
+				41DECA3F1B7A92DD00EBD135 /* HACMapLayoutGuide.h */,
+				41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */,
+				41DECA411B7A92DD00EBD135 /* HACClusterMapViewController.h */,
+				41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */,
+			);
+			path = HACClusterMapViewController;
+			sourceTree = "<group>";
+		};
+		41DECA111B7A920100EBD135 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA501B7A932700EBD135 /* Info.plist */,
+				41DECA511B7A932700EBD135 /* main.m */,
+			);
+			name = "Supporting Files";
+			path = HACClusterMapViewController;
+			sourceTree = "<group>";
+		};
+		41DECA241B7A920100EBD135 /* HACClusterMapViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */,
+				41DECA251B7A920100EBD135 /* Supporting Files */,
+			);
+			path = HACClusterMapViewControllerTests;
+			sourceTree = "<group>";
+		};
+		41DECA251B7A920100EBD135 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA261B7A920100EBD135 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		41DECA311B7A927200EBD135 /* ExampleApp */ = {
+			isa = PBXGroup;
+			children = (
+				41DECA541B7A934100EBD135 /* Images.xcassets */,
+				41DECA471B7A931900EBD135 /* AppDelegate.h */,
+				41DECA481B7A931900EBD135 /* AppDelegate.m */,
+				41DECA5A1B7A93F700EBD135 /* MapViewController.h */,
+				41DECA5B1B7A93F700EBD135 /* MapViewController.m */,
+				41DECA5C1B7A93F700EBD135 /* MapViewController.xib */,
+				41DECA571B7A935400EBD135 /* LaunchScreen.xib */,
+				41DECA111B7A920100EBD135 /* Supporting Files */,
+			);
+			path = ExampleApp;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		41DECA0D1B7A920100EBD135 /* HACClusterMapViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41DECA2B1B7A920100EBD135 /* Build configuration list for PBXNativeTarget "HACClusterMapViewController" */;
+			buildPhases = (
+				41DECA0A1B7A920100EBD135 /* Sources */,
+				41DECA0B1B7A920100EBD135 /* Frameworks */,
+				41DECA0C1B7A920100EBD135 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HACClusterMapViewController;
+			productName = HACClusterMapViewController;
+			productReference = 41DECA0E1B7A920100EBD135 /* HACClusterMapViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		41DECA201B7A920100EBD135 /* HACClusterMapViewControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41DECA2E1B7A920100EBD135 /* Build configuration list for PBXNativeTarget "HACClusterMapViewControllerTests" */;
+			buildPhases = (
+				41DECA1D1B7A920100EBD135 /* Sources */,
+				41DECA1E1B7A920100EBD135 /* Frameworks */,
+				41DECA1F1B7A920100EBD135 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				41DECA231B7A920100EBD135 /* PBXTargetDependency */,
+			);
+			name = HACClusterMapViewControllerTests;
+			productName = HACClusterMapViewControllerTests;
+			productReference = 41DECA211B7A920100EBD135 /* HACClusterMapViewControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41DECA061B7A920100EBD135 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = MasterApp;
+				TargetAttributes = {
+					41DECA0D1B7A920100EBD135 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					41DECA201B7A920100EBD135 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = 41DECA0D1B7A920100EBD135;
+					};
+				};
+			};
+			buildConfigurationList = 41DECA091B7A920100EBD135 /* Build configuration list for PBXProject "HACClusterMapViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 41DECA051B7A920100EBD135;
+			productRefGroup = 41DECA0F1B7A920100EBD135 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				41DECA0D1B7A920100EBD135 /* HACClusterMapViewController */,
+				41DECA201B7A920100EBD135 /* HACClusterMapViewControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		41DECA0C1B7A920100EBD135 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41DECA551B7A934100EBD135 /* Images.xcassets in Resources */,
+				41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */,
+				41DECA521B7A932700EBD135 /* Info.plist in Resources */,
+				41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41DECA1F1B7A920100EBD135 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		41DECA0A1B7A920100EBD135 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */,
+				41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */,
+				41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */,
+				41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */,
+				41DECA531B7A932700EBD135 /* main.m in Sources */,
+				41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */,
+				41DECA5D1B7A93F700EBD135 /* MapViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		41DECA1D1B7A920100EBD135 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		41DECA231B7A920100EBD135 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41DECA0D1B7A920100EBD135 /* HACClusterMapViewController */;
+			targetProxy = 41DECA221B7A920100EBD135 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		41DECA571B7A935400EBD135 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				41DECA581B7A935400EBD135 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		41DECA291B7A920100EBD135 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		41DECA2A1B7A920100EBD135 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		41DECA2C1B7A920100EBD135 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41DECA2D1B7A920100EBD135 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ExampleApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		41DECA2F1B7A920100EBD135 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HACClusterMapViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HACClusterMapViewController.app/HACClusterMapViewController";
+			};
+			name = Debug;
+		};
+		41DECA301B7A920100EBD135 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HACClusterMapViewControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HACClusterMapViewController.app/HACClusterMapViewController";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		41DECA091B7A920100EBD135 /* Build configuration list for PBXProject "HACClusterMapViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41DECA291B7A920100EBD135 /* Debug */,
+				41DECA2A1B7A920100EBD135 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41DECA2B1B7A920100EBD135 /* Build configuration list for PBXNativeTarget "HACClusterMapViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41DECA2C1B7A920100EBD135 /* Debug */,
+				41DECA2D1B7A920100EBD135 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		41DECA2E1B7A920100EBD135 /* Build configuration list for PBXNativeTarget "HACClusterMapViewControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41DECA2F1B7A920100EBD135 /* Debug */,
+				41DECA301B7A920100EBD135 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41DECA061B7A920100EBD135 /* Project object */;
+}
