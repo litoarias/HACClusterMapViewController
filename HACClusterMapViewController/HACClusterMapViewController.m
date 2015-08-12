@@ -71,7 +71,13 @@
     if ([view.annotation isKindOfClass:[HACAnnotationMap class]])
     {
         HACAnnotationMap *annotation = (HACAnnotationMap *)view.annotation;
-        [annotation updateSubtitleIfNeeded];
+        if (annotation.containedAnnotations.count > 0) {
+            NSMutableArray *annotationsTemp = [NSMutableArray arrayWithArray:annotation.containedAnnotations];
+            [annotationsTemp addObject:annotation];
+            [self.mapView showAnnotations:annotationsTemp animated:YES];
+        }else{
+            [annotation updateSubtitleIfNeeded];
+        }
     }
 }
 
@@ -189,8 +195,8 @@
             if (filteredAnnotationsInBucket.count > 0) {
                 HACAnnotationMap *annotationForGrid = (HACAnnotationMap *)[self annotationInGrid:gridMapRect usingAnnotations:filteredAnnotationsInBucket];
                 
-                [self.mapView viewForAnnotation:annotationForGrid];
                 [self.mapView removeAnnotation:annotationForGrid];
+//                [self.mapView viewForAnnotation:annotationForGrid];
                 
                 [filteredAnnotationsInBucket removeObject:annotationForGrid];
                 
