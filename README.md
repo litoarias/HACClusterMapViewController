@@ -1,5 +1,8 @@
 # HACClusterMapViewController
 HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
+
+![Preview](https://github.com/litoarias/HACClusterMapViewController/blob/master/ExampleApp/hacclusterviewcontroller.gif)
+
 ##Requirements and Dependencies
 - iOS >= 7.0
 - ARC enabled
