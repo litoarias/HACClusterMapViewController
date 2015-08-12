@@ -23,7 +23,7 @@ Import in your .h HACClusterMapViewController
 ```objective-c
 #import "HACClusterMapViewController.h"
 ```
-And subclasing a class
+And subclasing your class
 ```objective-c
 @interface Your_Map_View_Controller : HACClusterMapViewController
 ```
