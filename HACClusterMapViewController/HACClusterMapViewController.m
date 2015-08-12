@@ -66,6 +66,15 @@
     return nil;
 }
 
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    
+    if ([view.annotation isKindOfClass:[HACAnnotationMap class]])
+    {
+        HACAnnotationMap *annotation = (HACAnnotationMap *)view.annotation;
+        [annotation updateSubtitleIfNeeded];
+    }
+}
+
 
 - (void)mapView:(MKMapView *)aMapView regionDidChangeAnimated:(BOOL)animated {
     [self updateVisibleAnnotations];

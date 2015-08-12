@@ -34,7 +34,7 @@
     self.count = self.containedAnnotations.count + 1;
     
     if (self.containedAnnotations.count > 0) {
-        return [NSString stringWithFormat:@"%zd Locales", self.containedAnnotations.count + 1];
+        return [NSString stringWithFormat:@"%zd items", self.containedAnnotations.count + 1];
     }
     
     return _title;
