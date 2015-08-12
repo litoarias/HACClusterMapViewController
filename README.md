@@ -30,6 +30,9 @@ And subclasing your class
 ```objective-c
 @interface Your_Map_View_Controller : HACClusterMapViewController
 ```
+#### Map `IBOutlet`
+Using Interface Builder make `IBOutlet` of your map and it is essential to put this name to IBOutlet map is `mapView`, so the parent class so recognized. For more information look at the sample project.
+
 #### Create annotations -> `HACAnnotationMap`
 It's simple to use annotations to images you want, you can create all you want to test in a loop.
 ```objective-c
