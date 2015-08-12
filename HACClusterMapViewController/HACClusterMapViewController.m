@@ -153,81 +153,82 @@
 }
 
 - (void)updateVisibleAnnotations {
-    // This value to controls the number of off screen annotations are displayed.
-    // A bigger number means more annotations, less chance of seeing annotation views pop in but decreased performance.
-    // A smaller number means fewer annotations, more chance of seeing annotation views pop in but better performance.
-    static float marginFactor = 6.0;
-    // Adjust this roughly based on the dimensions of your annotations views.
-    // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
-    // Numbers too small result in overlapping annotations views and too many annotations on screen.
-    static float bucketSize = 60.0;
-    
-    // find all the annotations in the visible area + a wide margin to avoid popping annotation views in and out while panning the map.
-    MKMapRect visibleMapRect = [self.mapView visibleMapRect];
-    MKMapRect adjustedVisibleMapRect = MKMapRectInset(visibleMapRect, -marginFactor * visibleMapRect.size.width, -marginFactor * visibleMapRect.size.height);
-    
-    // determine how wide each bucket will be, as a MKMapRect square
-    CLLocationCoordinate2D leftCoordinate = [self.mapView convertPoint:CGPointZero toCoordinateFromView:self.view];
-    CLLocationCoordinate2D rightCoordinate = [self.mapView convertPoint:CGPointMake(bucketSize, 0) toCoordinateFromView:self.view];
-    double gridSize = MKMapPointForCoordinate(rightCoordinate).x - MKMapPointForCoordinate(leftCoordinate).x;
-    MKMapRect gridMapRect = MKMapRectMake(0, 0, gridSize, gridSize);
-    
-    // condense annotations, with a padding of two squares, around the visibleMapRect
-    double startX = floor(MKMapRectGetMinX(adjustedVisibleMapRect) / gridSize) * gridSize;
-    double startY = floor(MKMapRectGetMinY(adjustedVisibleMapRect) / gridSize) * gridSize;
-    double endX = floor(MKMapRectGetMaxX(adjustedVisibleMapRect) / gridSize) * gridSize;
-    double endY = floor(MKMapRectGetMaxY(adjustedVisibleMapRect) / gridSize) * gridSize;
-    
-    // for each square in our grid, pick one annotation to show
-    gridMapRect.origin.y = startY;
-    while (MKMapRectGetMinY(gridMapRect) <= endY) {
-        gridMapRect.origin.x = startX;
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        // This value to controls the number of off screen annotations are displayed.
+        // A bigger number means more annotations, less chance of seeing annotation views pop in but decreased performance.
+        // A smaller number means fewer annotations, more chance of seeing annotation views pop in but better performance.
+        static float marginFactor = 6.0;
+        // Adjust this roughly based on the dimensions of your annotations views.
+        // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
+        // Numbers too small result in overlapping annotations views and too many annotations on screen.
+        static float bucketSize = 60.0;
         
-        while (MKMapRectGetMinX(gridMapRect) <= endX) {
-            NSSet *allAnnotationsInBucket = [self.allAnnotationsMapView annotationsInMapRect:gridMapRect];
-            NSSet *visibleAnnotationsInBucket = [self.mapView annotationsInMapRect:gridMapRect];
+        // find all the annotations in the visible area + a wide margin to avoid popping annotation views in and out while panning the map.
+        MKMapRect visibleMapRect = [self.mapView visibleMapRect];
+        MKMapRect adjustedVisibleMapRect = MKMapRectInset(visibleMapRect, -marginFactor * visibleMapRect.size.width, -marginFactor * visibleMapRect.size.height);
+        
+        // determine how wide each bucket will be, as a MKMapRect square
+        CLLocationCoordinate2D leftCoordinate = [self.mapView convertPoint:CGPointZero toCoordinateFromView:self.view];
+        CLLocationCoordinate2D rightCoordinate = [self.mapView convertPoint:CGPointMake(bucketSize, 0) toCoordinateFromView:self.view];
+        double gridSize = MKMapPointForCoordinate(rightCoordinate).x - MKMapPointForCoordinate(leftCoordinate).x;
+        MKMapRect gridMapRect = MKMapRectMake(0, 0, gridSize, gridSize);
+        
+        // condense annotations, with a padding of two squares, around the visibleMapRect
+        double startX = floor(MKMapRectGetMinX(adjustedVisibleMapRect) / gridSize) * gridSize;
+        double startY = floor(MKMapRectGetMinY(adjustedVisibleMapRect) / gridSize) * gridSize;
+        double endX = floor(MKMapRectGetMaxX(adjustedVisibleMapRect) / gridSize) * gridSize;
+        double endY = floor(MKMapRectGetMaxY(adjustedVisibleMapRect) / gridSize) * gridSize;
+        
+        // for each square in our grid, pick one annotation to show
+        gridMapRect.origin.y = startY;
+        while (MKMapRectGetMinY(gridMapRect) <= endY) {
+            gridMapRect.origin.x = startX;
             
-            // we only care about PhotoAnnotations
-            NSMutableSet *filteredAnnotationsInBucket = [[allAnnotationsInBucket objectsPassingTest:^BOOL(id obj, BOOL *stop) {
-                return ([obj isKindOfClass:[HACAnnotationMap class]]);
-            }] mutableCopy];
-            
-            if (filteredAnnotationsInBucket.count > 0) {
-                HACAnnotationMap *annotationForGrid = (HACAnnotationMap *)[self annotationInGrid:gridMapRect usingAnnotations:filteredAnnotationsInBucket];
+            while (MKMapRectGetMinX(gridMapRect) <= endX) {
+                NSSet *allAnnotationsInBucket = [self.allAnnotationsMapView annotationsInMapRect:gridMapRect];
+                NSSet *visibleAnnotationsInBucket = [self.mapView annotationsInMapRect:gridMapRect];
                 
-                [self.mapView removeAnnotation:annotationForGrid];
-//                [self.mapView viewForAnnotation:annotationForGrid];
+                // we only care about PhotoAnnotations
+                NSMutableSet *filteredAnnotationsInBucket = [[allAnnotationsInBucket objectsPassingTest:^BOOL(id obj, BOOL *stop) {
+                    return ([obj isKindOfClass:[HACAnnotationMap class]]);
+                }] mutableCopy];
                 
-                [filteredAnnotationsInBucket removeObject:annotationForGrid];
-                
-                // give the annotationForGrid a reference to all the annotations it will represent
-                annotationForGrid.containedAnnotations = [filteredAnnotationsInBucket allObjects];
-                
-                [self.mapView addAnnotation:annotationForGrid];
-                
-                for (HACAnnotationMap *annotation in filteredAnnotationsInBucket) {
-                    // give all the other annotations a reference to the one which is representing them
-                    annotation.clusterAnnotation = annotationForGrid;
-                    annotation.containedAnnotations = nil;
-                    // remove annotations which we've decided to cluster
-                    if ([visibleAnnotationsInBucket containsObject:annotation]) {
-                        CLLocationCoordinate2D actualCoordinate = annotation.coordinate;
-                        [UIView animateWithDuration:0.3 animations:^{
-                            annotation.coordinate = annotation.clusterAnnotation.coordinate;
-                        } completion:^(BOOL finished) {
-                            annotation.coordinate = actualCoordinate;
-                            [self.mapView removeAnnotation:annotation];
-                        }];
+                if (filteredAnnotationsInBucket.count > 0) {
+                    HACAnnotationMap *annotationForGrid = (HACAnnotationMap *)[self annotationInGrid:gridMapRect usingAnnotations:filteredAnnotationsInBucket];
+                    
+                    [self.mapView removeAnnotation:annotationForGrid];
+                    //                [self.mapView viewForAnnotation:annotationForGrid];
+                    
+                    [filteredAnnotationsInBucket removeObject:annotationForGrid];
+                    
+                    // give the annotationForGrid a reference to all the annotations it will represent
+                    annotationForGrid.containedAnnotations = [filteredAnnotationsInBucket allObjects];
+                    
+                    [self.mapView addAnnotation:annotationForGrid];
+                    
+                    for (HACAnnotationMap *annotation in filteredAnnotationsInBucket) {
+                        // give all the other annotations a reference to the one which is representing them
+                        annotation.clusterAnnotation = annotationForGrid;
+                        annotation.containedAnnotations = nil;
+                        // remove annotations which we've decided to cluster
+                        if ([visibleAnnotationsInBucket containsObject:annotation]) {
+                            CLLocationCoordinate2D actualCoordinate = annotation.coordinate;
+                            [UIView animateWithDuration:0.3 animations:^{
+                                annotation.coordinate = annotation.clusterAnnotation.coordinate;
+                            } completion:^(BOOL finished) {
+                                annotation.coordinate = actualCoordinate;
+                                [self.mapView removeAnnotation:annotation];
+                            }];
+                        }
                     }
                 }
+                gridMapRect.origin.x += gridSize;
             }
-            
-            gridMapRect.origin.x += gridSize;
+            gridMapRect.origin.y += gridSize;
         }
-        
-        gridMapRect.origin.y += gridSize;
-    }
+    }];
 }
+
 
 - (void)addBounceAnnimationToView:(UIView *)view
 {
