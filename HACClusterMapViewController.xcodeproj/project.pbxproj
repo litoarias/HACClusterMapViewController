@@ -19,6 +19,7 @@
 		41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA571B7A935400EBD135 /* LaunchScreen.xib */; };
 		41DECA5D1B7A93F700EBD135 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA5B1B7A93F700EBD135 /* MapViewController.m */; };
 		41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA5C1B7A93F700EBD135 /* MapViewController.xib */; };
+		41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		41DECA5A1B7A93F700EBD135 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		41DECA5B1B7A93F700EBD135 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		41DECA5C1B7A93F700EBD135 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hacclusterviewcontroller.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		41DECA311B7A927200EBD135 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
+				41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */,
 				41DECA541B7A934100EBD135 /* Images.xcassets */,
 				41DECA471B7A931900EBD135 /* AppDelegate.h */,
 				41DECA481B7A931900EBD135 /* AppDelegate.m */,
@@ -229,6 +232,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */,
 				41DECA551B7A934100EBD135 /* Images.xcassets in Resources */,
 				41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */,
 				41DECA521B7A932700EBD135 /* Info.plist in Resources */,
@@ -446,6 +450,7 @@
 				41DECA2D1B7A920100EBD135 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41DECA2E1B7A920100EBD135 /* Build configuration list for PBXNativeTarget "HACClusterMapViewControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -454,6 +459,7 @@
 				41DECA301B7A920100EBD135 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
