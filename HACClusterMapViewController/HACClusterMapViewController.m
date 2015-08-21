@@ -185,7 +185,7 @@
         
         while (MKMapRectGetMinX(gridMapRect) <= endX) {
             NSSet *allAnnotationsInBucket = [self.allAnnotationsMapView annotationsInMapRect:gridMapRect];
-            //            NSSet *visibleAnnotationsInBucket = [self.mapView annotationsInMapRect:gridMapRect];
+            NSSet *visibleAnnotationsInBucket = [self.mapView annotationsInMapRect:gridMapRect];
             
             // we only care about PhotoAnnotations
             NSMutableSet *filteredAnnotationsInBucket = [[allAnnotationsInBucket objectsPassingTest:^BOOL(id obj, BOOL *stop) {
@@ -208,29 +208,24 @@
                     annotation.clusterAnnotation = annotationForGrid;
                     annotation.containedAnnotations = nil;
                     
-                    
-                    MKAnnotationView *view = [self.mapView viewForAnnotation:annotation];
-                    
-                    if (view) {
-                        
-                        [self addBounceDeleteAnnimationToView:view];
-                        
-                        
-                    }
-                    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                        [self.mapView removeAnnotation:annotation];
-                    });
-                    
                     // remove annotations which we've decided to cluster
-                    //                        if ([visibleAnnotationsInBucket containsObject:annotation]) {
-                    //                            CLLocationCoordinate2D actualCoordinate = annotation.coordinate;
-                    //                            [UIView animateWithDuration:0.3 animations:^{
-                    //                                annotation.coordinate = annotation.clusterAnnotation.coordinate;
-                    //                            } completion:^(BOOL finished) {
-                    //                                annotation.coordinate = actualCoordinate;
-                    //                                [self.mapView removeAnnotation:annotation];
-                    //                            }];
-                    //                        }
+                    if ([visibleAnnotationsInBucket containsObject:annotation]) {
+                        MKAnnotationView *view = [self.mapView viewForAnnotation:annotation];
+                        if (view) {
+                            [self addBounceDeleteAnnimationToView:view];
+                        }
+                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                            [self.mapView removeAnnotation:annotation];
+                        });
+                        
+                        //                            CLLocationCoordinate2D actualCoordinate = annotation.coordinate;
+                        //                            [UIView animateWithDuration:0.3 animations:^{
+                        //                                annotation.coordinate = annotation.clusterAnnotation.coordinate;
+                        //                            } completion:^(BOOL finished) {
+                        //                                annotation.coordinate = actualCoordinate;
+                        //                                [self.mapView removeAnnotation:annotation];
+                        //                            }];
+                    }
                     
                 }
             }
