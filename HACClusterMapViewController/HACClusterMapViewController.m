@@ -196,14 +196,12 @@
                 if (filteredAnnotationsInBucket.count > 0) {
                     HACAnnotationMap *annotationForGrid = (HACAnnotationMap *)[self annotationInGrid:gridMapRect usingAnnotations:filteredAnnotationsInBucket];
                     
-                    [self.mapView removeAnnotation:annotationForGrid];
-                    //                [self.mapView viewForAnnotation:annotationForGrid];
-                    
                     [filteredAnnotationsInBucket removeObject:annotationForGrid];
                     
                     // give the annotationForGrid a reference to all the annotations it will represent
                     annotationForGrid.containedAnnotations = [filteredAnnotationsInBucket allObjects];
                     
+                    [self.mapView removeAnnotation:annotationForGrid];
                     [self.mapView addAnnotation:annotationForGrid];
                     
                     for (HACAnnotationMap *annotation in filteredAnnotationsInBucket) {
