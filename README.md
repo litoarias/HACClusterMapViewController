@@ -5,7 +5,7 @@ HACClusterMapViewController class is written in Objective-C and facilitates the 
 <img src="https://img.shields.io/github/issues/litoarias/HACClusterMapViewController.svg?style=flat-square">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square">
 <img src="https://img.shields.io/cocoapods/v/HACClusterMapViewController.svg?style=flat-square">
-<img src="https://img.shields.io/npm/dm/HACClusterMapViewController.svg">
+<img src="https://img.shields.io/npm/dm/HACClusterMapViewController.svg?style=flat-square">
 
 
 ![Preview](https://github.com/litoarias/HACClusterMapViewController/blob/master/ExampleApp/hacclusterviewcontroller.gif)
