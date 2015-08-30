@@ -1,6 +1,14 @@
 # HACClusterMapViewController
 HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
 
+<img src="https://img.shields.io/github/issues/litoarias/HACClusterMapViewController.svg?style=flat-square">
+<img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square">
+<img src="https://img.shields.io/cocoapods/v/HACClusterMapViewController.svg?style=flat-square">
+<img src="https://img.shields.io/github/downloads/atom/atom/latest/HACClusterMapViewController.svg?style=flat-square">
+<br>
+<img src="https://img.shields.io/twitter/url/https/github.com/litoarias/HACClusterMapViewController.svg?style=social">
+
+
 ![Preview](https://github.com/litoarias/HACClusterMapViewController/blob/master/ExampleApp/hacclusterviewcontroller.gif)
 
 ##Requirements and Dependencies
