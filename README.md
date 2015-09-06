@@ -75,6 +75,14 @@ NSMutableArray *annotationArray = [[NSMutableArray alloc] init];
         [annotationArray addObject:annotationCamping];
     }
 ```
+
+#### Customize cluster view
+```objective-c
+    self.paddingLegal = 0.0; // Bottom margin "Legal text"
+    self.clusterBackgroundColor = [UIColor redColor]; // Clustered view background color
+    self.clusterBorderColor = [UIColor whiteColor]; // Clustered view border color
+    self.clusterTextColor = [UIColor whiteColor]; // Cluster text color
+```
 #### The last step 
 The last step would be to call the driver father and pass the array as a parameter to start the process
 ```objective-c
