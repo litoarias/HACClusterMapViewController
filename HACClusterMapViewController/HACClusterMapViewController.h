@@ -14,8 +14,18 @@
 
 @interface HACClusterMapViewController : UIViewController
 
+
 @property (weak, nonatomic) MKMapView *mapView;
+
 @property (nonatomic, strong) MKMapView *allAnnotationsMapView;
+
+@property (assign, nonatomic) CGFloat paddingLegal;
+
+@property (strong, nonatomic) UIColor *clusterBackgroundColor;
+
+@property (strong, nonatomic) UIColor *clusterBorderColor;
+
+@property (strong, nonatomic) UIColor *clusterTextColor;
 
 -(void)starterWithAnnotations:(NSArray *)annotations;
 

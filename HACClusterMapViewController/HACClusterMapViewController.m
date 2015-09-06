@@ -21,6 +21,17 @@
     self.mapView.rotateEnabled = NO;
 }
 
+-(instancetype) init {
+    if (self = [super init]) {
+        [self defaultInit];
+    }
+    return self;
+}
+
+-(void)defaultInit{
+    _paddingLegal = 0.0;
+}
+
 -(void)starterWithAnnotations:(NSArray *)annotations{
     [self.allAnnotationsMapView addAnnotations:annotations];
     [self updateVisibleAnnotations];
@@ -42,14 +53,17 @@
         
         if (annotationView == nil)
         {
-            annotationView = [[HACAnnotationMapView alloc] initWithAnnotation:annotation reuseIdentifier:identifier];
             
+            annotationView = [[HACAnnotationMapView alloc] initWithAnnotation:annotation reuseIdentifier:identifier textColor:self.clusterTextColor];
+            
+            annotationView.clusterBackgroundColor = _clusterBackgroundColor;
+            annotationView.clusterBorderColor = _clusterBorderColor;
             
             if (ann.containedAnnotations.count > 0) {
                 annotationView.canShowCallout = NO;
                 [annotationView setCount:ann.containedAnnotations.count+1];
             }else{
-                annotationView.canShowCallout = NO;
+                annotationView.canShowCallout = YES;
                 annotationView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@",[(HACAnnotationMap *)annotationView.annotation imageName]]];
                 
                 annotationView.centerOffset = CGPointMake(0,-annotationView.frame.size.height*0.5);
@@ -75,9 +89,9 @@
             [annotationsTemp addObject:annotation];
             [self.mapView showAnnotations:annotationsTemp animated:YES];
         }
-        //        else{
-        //            [annotation updateSubtitleIfNeeded];
-        //        }
+        else{
+            [annotation updateSubtitleIfNeeded];
+        }
     }
 }
 
@@ -264,13 +278,13 @@
 -(id)topLayoutGuide
 {
     // #define kCompassInset 128.0/2.0
-    return [[HACMapLayoutGuide alloc] initWithLength:160.0/2.0];
+    return [[HACMapLayoutGuide alloc] initWithLength:80.0];
 }
 
 - (id)bottomLayoutGuide
 {
     // #define kLegalInset = 44.0
-    return [[HACMapLayoutGuide alloc] initWithLength:0.0];
+    return [[HACMapLayoutGuide alloc] initWithLength:_paddingLegal];
 }
 
 
