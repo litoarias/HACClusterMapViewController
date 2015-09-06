@@ -36,12 +36,22 @@ CGFloat TBScaledValueForValue(CGFloat value)
 
 @implementation HACAnnotationMapView
 
-- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier textColor:(UIColor *)textColor
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        _clusterTextColor = textColor;
         [self setupLabel];
+    }
+    return self;
+}
+
+-(instancetype)initWithFrame:(CGRect)frame{
+    
+    if (self = [super initWithFrame:frame]) {
+        _clusterBackgroundColor = [UIColor colorWithRed:(255.0 / 255.0) green:(95 / 255.0) blue:(42 / 255.0) alpha:1.0];
+        _clusterBorderColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -50,10 +60,8 @@ CGFloat TBScaledValueForValue(CGFloat value)
 {
     _countLabel = [[UILabel alloc] initWithFrame:self.frame];
     _countLabel.backgroundColor = [UIColor clearColor];
-    _countLabel.textColor = [UIColor whiteColor];
+    _countLabel.textColor = _clusterTextColor ? _clusterTextColor : [UIColor whiteColor];
     _countLabel.textAlignment = NSTextAlignmentCenter;
-    _countLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.75];
-    _countLabel.shadowOffset = CGSizeMake(0, -1);
     _countLabel.adjustsFontSizeToFitWidth = YES;
     _countLabel.numberOfLines = 1;
     _countLabel.font = [UIFont boldSystemFontOfSize:12];
@@ -82,8 +90,8 @@ CGFloat TBScaledValueForValue(CGFloat value)
     CGContextSetAllowsAntialiasing(context, true);
 
     UIColor *outerCircleStrokeColor = [UIColor colorWithWhite:0 alpha:0.25];
-    UIColor *innerCircleStrokeColor = [UIColor whiteColor];
-    UIColor *innerCircleFillColor = [UIColor colorWithRed:(255.0 / 255.0) green:(95 / 255.0) blue:(42 / 255.0) alpha:1.0];
+    UIColor *innerCircleStrokeColor = _clusterBorderColor;
+    UIColor *innerCircleFillColor = _clusterBackgroundColor;
 
     CGRect circleFrame = CGRectInset(rect, 4, 4);
 

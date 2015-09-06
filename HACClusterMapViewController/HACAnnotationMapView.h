@@ -10,6 +10,11 @@
 
 @interface HACAnnotationMapView : MKAnnotationView
 
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier textColor:(UIColor *)textColor;
+
 @property (assign, nonatomic) NSUInteger count;
+@property (assign, nonatomic) UIColor *clusterBackgroundColor;
+@property (assign, nonatomic) UIColor *clusterBorderColor;
+@property (assign, nonatomic) UIColor *clusterTextColor;
 
 @end

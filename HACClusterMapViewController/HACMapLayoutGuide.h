@@ -9,7 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface HACMapLayoutGuide : NSObject<UILayoutSupport>
+@interface HACMapLayoutGuide : NSObject <UILayoutSupport>
+
 @property (nonatomic) float insetLength;
+
 -(id)initWithLength:(float)length;
+
 @end
