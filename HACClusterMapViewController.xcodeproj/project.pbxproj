@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41D59CDE1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */; settings = {ASSET_TAGS = (); }; };
 		41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */; };
 		41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */; };
 		41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */; };
 		41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */; };
 		41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */; };
 		41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA481B7A931900EBD135 /* AppDelegate.m */; };
-		41DECA521B7A932700EBD135 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA501B7A932700EBD135 /* Info.plist */; };
 		41DECA531B7A932700EBD135 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA511B7A932700EBD135 /* main.m */; };
 		41DECA551B7A934100EBD135 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA541B7A934100EBD135 /* Images.xcassets */; };
 		41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA571B7A935400EBD135 /* LaunchScreen.xib */; };
@@ -33,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41D59CDC1BC6C2A20067DA61 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
+		41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		41DECA0E1B7A920100EBD135 /* HACClusterMapViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HACClusterMapViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DECA211B7A920100EBD135 /* HACClusterMapViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HACClusterMapViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DECA261B7A920100EBD135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,8 @@
 				41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */,
 				41DECA411B7A92DD00EBD135 /* HACClusterMapViewController.h */,
 				41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */,
+				41D59CDC1BC6C2A20067DA61 /* MKMapView+ZoomLevel.h */,
+				41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */,
 			);
 			path = HACClusterMapViewController;
 			sourceTree = "<group>";
@@ -196,7 +200,7 @@
 		41DECA061B7A920100EBD135 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = MasterApp;
 				TargetAttributes = {
 					41DECA0D1B7A920100EBD135 = {
@@ -235,7 +239,6 @@
 				41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */,
 				41DECA551B7A934100EBD135 /* Images.xcassets in Resources */,
 				41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */,
-				41DECA521B7A932700EBD135 /* Info.plist in Resources */,
 				41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +258,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */,
+				41D59CDE1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m in Sources */,
 				41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */,
 				41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */,
 				41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */,
@@ -316,6 +320,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -382,6 +387,7 @@
 				INFOPLIST_FILE = ExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.masterapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -393,6 +399,7 @@
 				INFOPLIST_FILE = ExampleApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.masterapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -411,6 +418,7 @@
 				);
 				INFOPLIST_FILE = HACClusterMapViewControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.masterapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HACClusterMapViewController.app/HACClusterMapViewController";
 			};
@@ -426,6 +434,7 @@
 				);
 				INFOPLIST_FILE = HACClusterMapViewControllerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "es.masterapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HACClusterMapViewController.app/HACClusterMapViewController";
 			};

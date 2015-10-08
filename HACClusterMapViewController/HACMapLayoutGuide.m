@@ -10,6 +10,9 @@
 
 @implementation HACMapLayoutGuide
 @synthesize length = _length;
+@synthesize topAnchor = _topAnchor;
+@synthesize heightAnchor = _heightAnchor;
+@synthesize bottomAnchor = _bottomAnchor;
 
 -(id)initWithLength:(float)length
 {

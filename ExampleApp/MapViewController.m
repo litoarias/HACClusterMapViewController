@@ -41,7 +41,7 @@
     float lat;
     float lng;
     
-    for (int i = 0; i < 100; i++) {
+    for (int i = 0; i < 1000; i++) {
         lat = arc4random()%20 +50;
         lng = -107.0  + arc4random()%10;
         
@@ -50,7 +50,7 @@
         [annotationArray addObject:annotation1];
     }
     
-    for (int i = 100; i < 200; i++) {
+    for (int i = 1000; i < 2000; i++) {
         lat = arc4random()%20 +50;
         lng = -10.0  + arc4random()%10;
         
@@ -59,7 +59,7 @@
         [annotationArray addObject:annotation2];
     }
     
-    for (int i = 200; i < 300; i++) {
+    for (int i = 2000; i < 3000; i++) {
         lat = arc4random()%20 +50;
         lng = -3.0  + arc4random()%10;
         

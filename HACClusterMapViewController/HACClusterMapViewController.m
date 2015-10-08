@@ -7,8 +7,11 @@
 //
 
 #import "HACClusterMapViewController.h"
+#import "MKMapView+ZoomLevel.h"
 
-@interface HACClusterMapViewController ()<MKMapViewDelegate>
+@interface HACClusterMapViewController () <MKMapViewDelegate>{
+    NSUInteger lastZoom;
+}
 
 @end
 
@@ -35,6 +38,7 @@
 -(void)starterWithAnnotations:(NSArray *)annotations{
     [self.allAnnotationsMapView addAnnotations:annotations];
     [self updateVisibleAnnotations];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,9 +99,29 @@
     }
 }
 
+-(BOOL)rotate{
+    MKMapCamera *camera = self.mapView.camera;
+    CLLocationDistance alt = camera.altitude;
+    
+//    alt = alt / cos(self.mapView.camera.pitch*M_PI/180.0);
+    
+    if (alt < 3000 && alt > 1000) {
+        return YES;
+    }
+    return NO;
+}
 
 - (void)mapView:(MKMapView *)aMapView regionDidChangeAnimated:(BOOL)animated {
-    [self updateVisibleAnnotations];
+    if([self rotate])
+        return;
+    
+    NSUInteger level = [aMapView aZoomLevel];
+    if (lastZoom != level) {
+        lastZoom = level;
+        [[NSOperationQueue new] addOperationWithBlock:^{
+            [self updateVisibleAnnotations];
+        }];
+    }
 }
 
 - (void)mapView:(MKMapView *)aMapView didAddAnnotationViews:(NSArray *)views {
@@ -170,11 +194,11 @@
     // This value to controls the number of off screen annotations are displayed.
     // A bigger number means more annotations, less chance of seeing annotation views pop in but decreased performance.
     // A smaller number means fewer annotations, more chance of seeing annotation views pop in but better performance.
-    static float marginFactor = 6.0;
+    static float marginFactor = 5.0;
     // Adjust this roughly based on the dimensions of your annotations views.
     // Bigger numbers more aggressively coalesce annotations (fewer annotations displayed but better performance).
     // Numbers too small result in overlapping annotations views and too many annotations on screen.
-    static float bucketSize = 60.0;
+    static float bucketSize = 70.0;
     
     // find all the annotations in the visible area + a wide margin to avoid popping annotation views in and out while panning the map.
     MKMapRect visibleMapRect = [self.mapView visibleMapRect];
@@ -197,7 +221,8 @@
     while (MKMapRectGetMinY(gridMapRect) <= endY) {
         gridMapRect.origin.x = startX;
         
-        while (MKMapRectGetMinX(gridMapRect) <= endX) {
+        while (MKMapRectGetMinX(gridMapRect) <= endX)
+        {
             NSSet *allAnnotationsInBucket = [self.allAnnotationsMapView annotationsInMapRect:gridMapRect];
             NSSet *visibleAnnotationsInBucket = [self.mapView annotationsInMapRect:gridMapRect];
             
@@ -206,18 +231,23 @@
                 return ([obj isKindOfClass:[HACAnnotationMap class]]);
             }] mutableCopy];
             
-            if (filteredAnnotationsInBucket.count > 0) {
+            
+            if (filteredAnnotationsInBucket.count > 0)
+            {
                 HACAnnotationMap *annotationForGrid = (HACAnnotationMap *)[self annotationInGrid:gridMapRect usingAnnotations:filteredAnnotationsInBucket];
                 
                 [filteredAnnotationsInBucket removeObject:annotationForGrid];
                 
                 // give the annotationForGrid a reference to all the annotations it will represent
                 annotationForGrid.containedAnnotations = [filteredAnnotationsInBucket allObjects];
+               
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [self.mapView removeAnnotation:annotationForGrid];
+                    [self.mapView addAnnotation:annotationForGrid];
+                }];
                 
-                [self.mapView removeAnnotation:annotationForGrid];
-                [self.mapView addAnnotation:annotationForGrid];
-                
-                for (HACAnnotationMap *annotation in filteredAnnotationsInBucket) {
+                for (HACAnnotationMap *annotation in filteredAnnotationsInBucket)
+                {
                     // give all the other annotations a reference to the one which is representing them
                     annotation.clusterAnnotation = annotationForGrid;
                     annotation.containedAnnotations = nil;
@@ -227,10 +257,12 @@
                         MKAnnotationView *view = [self.mapView viewForAnnotation:annotation];
                         if (view) {
                             [self addBounceDeleteAnnimationToView:view];
+                            
+                            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                                [self.mapView removeAnnotation:annotation];
+                                
+                            });
                         }
-                        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                            [self.mapView removeAnnotation:annotation];
-                        });
                     }
                 }
             }
@@ -247,7 +279,7 @@
     
     bounceAnimation.values = @[@(0.05), @(1.1), @(0.9), @(1)];
     
-    bounceAnimation.duration = 0.6;
+    bounceAnimation.duration = 0.3;
     NSMutableArray *timingFunctions = [[NSMutableArray alloc] initWithCapacity:bounceAnimation.values.count];
     for (NSUInteger i = 0; i < bounceAnimation.values.count; i++) {
         [timingFunctions addObject:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
@@ -262,9 +294,9 @@
 {
     CAKeyframeAnimation *bounceAnimation = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
     
-    bounceAnimation.values = @[@(1.5),@(1.7),@(0.0),@(0.0)];
+    bounceAnimation.values = @[@(1.5),@(1.7),@(0.2),@(0.1)];
     
-    bounceAnimation.duration = 0.6;
+    bounceAnimation.duration = 0.3;
     NSMutableArray *timingFunctions = [[NSMutableArray alloc] initWithCapacity:bounceAnimation.values.count];
     for (NSUInteger i = 0; i < bounceAnimation.values.count; i++) {
         [timingFunctions addObject:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
