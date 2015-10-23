@@ -40,7 +40,7 @@ For using Interface Builder, set class in your MKMapView `HACMKMapView` and make
 ```objective-c
 self.mapView.mapDelegate = self;
 ```
-#### Create annotations -> `HACAnnotationMap`
+#### Creat tree struct
 It is easy to use , you must create the following structure in a loop.
 ```objective-c
 
