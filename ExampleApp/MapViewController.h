@@ -1,14 +1,13 @@
 //
 //  MapViewController.h
-//  HACClusterMapViewController
+//  HACAnnotationClustering
 //
-//  Created by Hipolito Arias on 11/8/15.
-//  Copyright (c) 2015 MasterApp. All rights reserved.
+//  Created by Hipolito Arias on 14/10/15.
+//  Copyright © 2015 Theodore Calmes. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "HACClusterMapViewController.h"
 
-@interface MapViewController : HACClusterMapViewController
+@interface MapViewController : UIViewController
 
 @end

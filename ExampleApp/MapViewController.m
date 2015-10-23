@@ -1,74 +1,55 @@
 //
 //  MapViewController.m
-//  HACClusterMapViewController
+//  HACAnnotationClustering
 //
-//  Created by Hipolito Arias on 11/8/15.
-//  Copyright (c) 2015 MasterApp. All rights reserved.
+//  Created by Hipolito Arias on 14/10/15.
+//  Copyright © 2015 Theodore Calmes. All rights reserved.
 //
 
 #import "MapViewController.h"
+#import "HACMKMapView.h"
 
-@interface MapViewController ()
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@interface MapViewController () <HACMKMapViewDelegate>
+
+@property (weak, nonatomic) IBOutlet HACMKMapView *mapView;
+
 @end
 
 @implementation MapViewController
 
-@synthesize mapView;
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.paddingLegal = 0.0;
-    self.clusterBackgroundColor = [UIColor redColor];
-    self.clusterBorderColor = [UIColor whiteColor];
-    self.clusterTextColor = [UIColor whiteColor];
+    self.mapView.mapDelegate = self;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self starterWithAnnotations:[self dropPins]];
-        [self.mapView showAnnotations:self.mapView.annotations animated:YES];
-    });
+////     // 1. Example with more than 150.000 annotations
+//    [self.mapView.coordinateQuadTree buildTreeWithExample];
+    
+    // 2. Custom markers example
+    NSArray *data = @[
+                      @{kLatitude:@48.47352, kLongitude:@3.87426,  kTitle : @"Title 1", kSubtitle : @"",            kIndex : @0},
+                      @{kLatitude:@52.59758, kLongitude:@-1.93061, kTitle : @"Title 2", kSubtitle : @"Subtitle 2",  kIndex : @1},
+                      @{kLatitude:@48.41370, kLongitude:@3.43531,  kTitle : @"Title 3", kSubtitle : @"Subtitle 3",  kIndex : @2},
+                      @{kLatitude:@48.31921, kLongitude:@18.10184, kTitle : @"Title 4", kSubtitle : @"Subtitle 4",  kIndex : @3},
+                      @{kLatitude:@47.84302, kLongitude:@22.81101, kTitle : @"Title 5", kSubtitle : @"Subtitle 5",  kIndex : @4},
+                      @{kLatitude:@60.88622, kLongitude:@26.83792, kTitle : @"Title 6", kSubtitle : @""          ,  kIndex : @5}
+                      ];
+    [self.mapView.coordinateQuadTree buildTreeWithArray:data];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+# pragma mark - HACMKMapViewDelegate
+
+-(void)viewForAnnotationView:(HAClusterAnnotationView *)annotationView annotation:(HAClusterAnnotation *)annotation{
+    if (annotation.index % 2 == 0) {
+        annotationView.image = [UIImage imageNamed:@"pin_museum"];
+    }else{
+        annotationView.image = [UIImage imageNamed:@"pin_coffee"];
+    }
 }
 
--(NSMutableArray *)dropPins {
-    
-    NSMutableArray *annotationArray = [[NSMutableArray alloc] init];
-    float lat;
-    float lng;
-    
-    for (int i = 0; i < 1000; i++) {
-        lat = arc4random()%20 +50;
-        lng = -107.0  + arc4random()%10;
-        
-        CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotation1 = [[HACAnnotationMap alloc]initWithImageName:@"pin_coffee" title:[NSString stringWithFormat:@"item %i",i] coordinate:location1];
-        [annotationArray addObject:annotation1];
-    }
-    
-    for (int i = 1000; i < 2000; i++) {
-        lat = arc4random()%20 +50;
-        lng = -10.0  + arc4random()%10;
-        
-        CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotation2 = [[HACAnnotationMap alloc]initWithImageName:@"pin_museum" title:[NSString stringWithFormat:@"item %i",i] coordinate:location2];
-        [annotationArray addObject:annotation2];
-    }
-    
-    for (int i = 2000; i < 3000; i++) {
-        lat = arc4random()%20 +50;
-        lng = -3.0  + arc4random()%10;
-        
-        CLLocationCoordinate2D location3 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotation3 = [[HACAnnotationMap alloc]initWithImageName:@"pin_camping" title:[NSString stringWithFormat:@"item %i",i] coordinate:location3];
-        [annotationArray addObject:annotation3];
-    }
-    
-    return annotationArray;
+-(void)didSelectAnnotationView:(HAClusterAnnotation *)annotation{
+    NSLog(@"You ara select annotation index %ld", (long)annotation.index);
 }
 
 @end

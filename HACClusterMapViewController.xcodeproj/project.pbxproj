@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		41D59CDE1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */; settings = {ASSET_TAGS = (); }; };
+		419521531BDAC1E0000DA89A /* HACQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214A1BDAC1E0000DA89A /* HACQuadTree.m */; settings = {ASSET_TAGS = (); }; };
+		419521541BDAC1E0000DA89A /* HACManagerQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */; settings = {ASSET_TAGS = (); }; };
+		419521551BDAC1E0000DA89A /* HAClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */; settings = {ASSET_TAGS = (); }; };
+		419521561BDAC1E0000DA89A /* HAClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */; settings = {ASSET_TAGS = (); }; };
+		419521571BDAC1E0000DA89A /* HACMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521521BDAC1E0000DA89A /* HACMKMapView.m */; settings = {ASSET_TAGS = (); }; };
+		4195215B1BDAC1F4000DA89A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521591BDAC1F4000DA89A /* MapViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4195215C1BDAC1F4000DA89A /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4195215A1BDAC1F4000DA89A /* MapViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		419521601BDAC27E000DA89A /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4195215F1BDAC27E000DA89A /* data.csv */; settings = {ASSET_TAGS = (); }; };
 		41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */; };
-		41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */; };
-		41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */; };
-		41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */; };
-		41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */; };
 		41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA481B7A931900EBD135 /* AppDelegate.m */; };
 		41DECA531B7A932700EBD135 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA511B7A932700EBD135 /* main.m */; };
 		41DECA551B7A934100EBD135 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA541B7A934100EBD135 /* Images.xcassets */; };
 		41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA571B7A935400EBD135 /* LaunchScreen.xib */; };
-		41DECA5D1B7A93F700EBD135 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA5B1B7A93F700EBD135 /* MapViewController.m */; };
-		41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA5C1B7A93F700EBD135 /* MapViewController.xib */; };
 		41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */; };
 /* End PBXBuildFile section */
 
@@ -33,29 +34,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		41D59CDC1BC6C2A20067DA61 /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
-		41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
+		419521491BDAC1E0000DA89A /* HACQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACQuadTree.h; sourceTree = "<group>"; };
+		4195214A1BDAC1E0000DA89A /* HACQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACQuadTree.m; sourceTree = "<group>"; };
+		4195214B1BDAC1E0000DA89A /* HACManagerQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACManagerQuadTree.h; sourceTree = "<group>"; };
+		4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACManagerQuadTree.m; sourceTree = "<group>"; };
+		4195214D1BDAC1E0000DA89A /* HAClusterAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAClusterAnnotation.h; sourceTree = "<group>"; };
+		4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAClusterAnnotation.m; sourceTree = "<group>"; };
+		4195214F1BDAC1E0000DA89A /* HAClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HAClusterAnnotationView.h; sourceTree = "<group>"; };
+		419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HAClusterAnnotationView.m; sourceTree = "<group>"; };
+		419521511BDAC1E0000DA89A /* HACMKMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACMKMapView.h; sourceTree = "<group>"; };
+		419521521BDAC1E0000DA89A /* HACMKMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACMKMapView.m; sourceTree = "<group>"; };
+		419521581BDAC1F4000DA89A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		419521591BDAC1F4000DA89A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		4195215A1BDAC1F4000DA89A /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		4195215F1BDAC27E000DA89A /* data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = data.csv; sourceTree = "<group>"; };
 		41DECA0E1B7A920100EBD135 /* HACClusterMapViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HACClusterMapViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DECA211B7A920100EBD135 /* HACClusterMapViewControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HACClusterMapViewControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		41DECA261B7A920100EBD135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HACClusterMapViewControllerTests.m; sourceTree = "<group>"; };
-		41DECA3B1B7A92DD00EBD135 /* HACAnnotationMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACAnnotationMap.h; sourceTree = "<group>"; };
-		41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACAnnotationMap.m; sourceTree = "<group>"; };
-		41DECA3D1B7A92DD00EBD135 /* HACAnnotationMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACAnnotationMapView.h; sourceTree = "<group>"; };
-		41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACAnnotationMapView.m; sourceTree = "<group>"; };
-		41DECA3F1B7A92DD00EBD135 /* HACMapLayoutGuide.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACMapLayoutGuide.h; sourceTree = "<group>"; };
-		41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACMapLayoutGuide.m; sourceTree = "<group>"; };
-		41DECA411B7A92DD00EBD135 /* HACClusterMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACClusterMapViewController.h; sourceTree = "<group>"; };
-		41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACClusterMapViewController.m; sourceTree = "<group>"; };
 		41DECA471B7A931900EBD135 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		41DECA481B7A931900EBD135 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		41DECA501B7A932700EBD135 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ExampleApp/Info.plist; sourceTree = SOURCE_ROOT; };
 		41DECA511B7A932700EBD135 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ExampleApp/main.m; sourceTree = SOURCE_ROOT; };
 		41DECA541B7A934100EBD135 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		41DECA581B7A935400EBD135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		41DECA5A1B7A93F700EBD135 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		41DECA5B1B7A93F700EBD135 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		41DECA5C1B7A93F700EBD135 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hacclusterviewcontroller.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,16 +101,16 @@
 		41DECA101B7A920100EBD135 /* HACClusterMapViewController */ = {
 			isa = PBXGroup;
 			children = (
-				41DECA3B1B7A92DD00EBD135 /* HACAnnotationMap.h */,
-				41DECA3C1B7A92DD00EBD135 /* HACAnnotationMap.m */,
-				41DECA3D1B7A92DD00EBD135 /* HACAnnotationMapView.h */,
-				41DECA3E1B7A92DD00EBD135 /* HACAnnotationMapView.m */,
-				41DECA3F1B7A92DD00EBD135 /* HACMapLayoutGuide.h */,
-				41DECA401B7A92DD00EBD135 /* HACMapLayoutGuide.m */,
-				41DECA411B7A92DD00EBD135 /* HACClusterMapViewController.h */,
-				41DECA421B7A92DD00EBD135 /* HACClusterMapViewController.m */,
-				41D59CDC1BC6C2A20067DA61 /* MKMapView+ZoomLevel.h */,
-				41D59CDD1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m */,
+				419521491BDAC1E0000DA89A /* HACQuadTree.h */,
+				4195214A1BDAC1E0000DA89A /* HACQuadTree.m */,
+				4195214B1BDAC1E0000DA89A /* HACManagerQuadTree.h */,
+				4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */,
+				4195214D1BDAC1E0000DA89A /* HAClusterAnnotation.h */,
+				4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */,
+				4195214F1BDAC1E0000DA89A /* HAClusterAnnotationView.h */,
+				419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */,
+				419521511BDAC1E0000DA89A /* HACMKMapView.h */,
+				419521521BDAC1E0000DA89A /* HACMKMapView.m */,
 			);
 			path = HACClusterMapViewController;
 			sourceTree = "<group>";
@@ -143,14 +145,15 @@
 		41DECA311B7A927200EBD135 /* ExampleApp */ = {
 			isa = PBXGroup;
 			children = (
-				41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */,
-				41DECA541B7A934100EBD135 /* Images.xcassets */,
 				41DECA471B7A931900EBD135 /* AppDelegate.h */,
 				41DECA481B7A931900EBD135 /* AppDelegate.m */,
-				41DECA5A1B7A93F700EBD135 /* MapViewController.h */,
-				41DECA5B1B7A93F700EBD135 /* MapViewController.m */,
-				41DECA5C1B7A93F700EBD135 /* MapViewController.xib */,
+				419521581BDAC1F4000DA89A /* MapViewController.h */,
+				419521591BDAC1F4000DA89A /* MapViewController.m */,
+				4195215A1BDAC1F4000DA89A /* MapViewController.xib */,
 				41DECA571B7A935400EBD135 /* LaunchScreen.xib */,
+				4195215F1BDAC27E000DA89A /* data.csv */,
+				41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */,
+				41DECA541B7A934100EBD135 /* Images.xcassets */,
 				41DECA111B7A920100EBD135 /* Supporting Files */,
 			);
 			path = ExampleApp;
@@ -238,8 +241,9 @@
 			files = (
 				41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */,
 				41DECA551B7A934100EBD135 /* Images.xcassets in Resources */,
+				419521601BDAC27E000DA89A /* data.csv in Resources */,
+				4195215C1BDAC1F4000DA89A /* MapViewController.xib in Resources */,
 				41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */,
-				41DECA5E1B7A93F700EBD135 /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41DECA431B7A92DD00EBD135 /* HACAnnotationMap.m in Sources */,
-				41D59CDE1BC6C2A20067DA61 /* MKMapView+ZoomLevel.m in Sources */,
-				41DECA441B7A92DD00EBD135 /* HACAnnotationMapView.m in Sources */,
-				41DECA451B7A92DD00EBD135 /* HACMapLayoutGuide.m in Sources */,
-				41DECA461B7A92DD00EBD135 /* HACClusterMapViewController.m in Sources */,
 				41DECA531B7A932700EBD135 /* main.m in Sources */,
 				41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */,
-				41DECA5D1B7A93F700EBD135 /* MapViewController.m in Sources */,
+				419521551BDAC1E0000DA89A /* HAClusterAnnotation.m in Sources */,
+				4195215B1BDAC1F4000DA89A /* MapViewController.m in Sources */,
+				419521541BDAC1E0000DA89A /* HACManagerQuadTree.m in Sources */,
+				419521561BDAC1E0000DA89A /* HAClusterAnnotationView.m in Sources */,
+				419521571BDAC1E0000DA89A /* HACMKMapView.m in Sources */,
+				419521531BDAC1E0000DA89A /* HACQuadTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
