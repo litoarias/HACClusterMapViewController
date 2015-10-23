@@ -1,6 +1,7 @@
 # HACClusterMapViewController
 <img src="https://img.shields.io/twitter/url/https/github.com/litoarias/HACClusterMapViewController.svg?style=social"><br>
 HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
+Will require us to come up with an ultra quick data structure built for the task. We will need to build it in C for it to be performant.
 
 <img src="https://img.shields.io/github/issues/litoarias/HACClusterMapViewController.svg?style=flat-square">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square">
@@ -42,6 +43,7 @@ self.mapView.mapDelegate = self;
 #### Create annotations -> `HACAnnotationMap`
 It is easy to use , you must create the following structure in a loop.
 ```objective-c
+
  NSArray *data = @[
                       @{kLatitude:@48.47352, kLongitude:@3.87426,  kTitle : @"Title 1", kSubtitle : @"",            kIndex : @0},
                       @{kLatitude:@52.59758, kLongitude:@-1.93061, kTitle : @"Title 2", kSubtitle : @"Subtitle 2",  kIndex : @1},
@@ -50,12 +52,30 @@ It is easy to use , you must create the following structure in a loop.
                       @{kLatitude:@47.84302, kLongitude:@22.81101, kTitle : @"Title 5", kSubtitle : @"Subtitle 5",  kIndex : @4},
                       @{kLatitude:@60.88622, kLongitude:@26.83792, kTitle : @"Title 6", kSubtitle : @""          ,  kIndex : @5}
                       ];
+                      
 ```
 
-#### The last step 
+#### We send build 
 The last step would be to call the driver father and pass the array as a parameter to start the process
 ```objective-c
  [self.mapView.coordinateQuadTree buildTreeWithArray:data];
+```
+#### Delegate methods
+With delegate methods we can set custom images of annotations or know what index of object be reference.
+```objective-c
+
+-(void)viewForAnnotationView:(HAClusterAnnotationView *)annotationView annotation:(HAClusterAnnotation *)annotation{
+    if (annotation.index % 2 == 0) {
+        annotationView.image = [UIImage imageNamed:@"pin_museum"];
+    }else{
+        annotationView.image = [UIImage imageNamed:@"pin_coffee"];
+    }
+}
+
+-(void)didSelectAnnotationView:(HAClusterAnnotation *)annotation{
+    NSLog(@"You ara select annotation index %ld", (long)annotation.index);
+}
+
 ```
 
 Enjoy :D
