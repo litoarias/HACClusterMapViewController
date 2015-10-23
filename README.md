@@ -23,70 +23,39 @@ HACClusterMapViewController class is written in Objective-C and facilitates the 
     pod 'HACClusterMapViewController'
 
 ####Manual install:
-- Copy `HACAnnottionMap.h` `HACAnnottionMap.m` `HACAnnotationMapView.m` `HACAnnotationMapView.m` `HACMapLayoutGuide.m` `HACMapLayoutGuide.m` `HACClusterMapViewController.m` and `HACClusterMapViewController.m` to your project
+- Copy `HACQuadTree.h` `HACQuadTree.m` `HACManagerQuadTree.h` `HACManagerQuadTree.m` `HAClusterAnnotation.h` `HAClusterAnnotation.m` `HAClusterAnnotationView.h` `HAClusterAnnotationView.m` and `HACMKMapView.h` `HACMKMapView.m` to your project
 - Manual install [HACClusterMapViewController](https://github.com/litoarias/HACClusterMapViewController/#manual-install)
 
 ##Usage
 
-#### Subclassing HACClusterMapViewController
-Import in your .h HACClusterMapViewController
+Import in your .h HACMKMapView
 ```objective-c
-#import "HACClusterMapViewController.h"
-```
-And subclasing your class
-```objective-c
-@interface Your_Map_View_Controller : HACClusterMapViewController
-```
-#### Map `IBOutlet`
-Using Interface Builder make `IBOutlet` of your map and it is essential to put this name to IBOutlet map is `mapView`, so the parent class so recognized. For more information look at the sample project.
-### Map `@synthesize`
-You should also add the synthesized view `@synthesize mapView;`
-```objective-c
-@implementation Your_Map_View_Controller
-@synthesize mapView;
-```
-#### Create annotations -> `HACAnnotationMap`
-It's simple to use annotations to images you want, you can create all you want to test in a loop.
-```objective-c
-NSMutableArray *annotationArray = [[NSMutableArray alloc] init];
-    float lat = 39.163195;
-    float lng = -0.255294;
-    
-    for (int i = 0; i < 100; i++) {
-        lat += (arc4random()%1000) * 0.0001;
-        lng -= (arc4random()%1000) * 0.0001;
-        
-        CLLocationCoordinate2D location1 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotationCoffee = [[HACAnnotationMap alloc]initWithImageName:@"pin_coffee" title:[NSString stringWithFormat:@"item %i",i] coordinate:location1];
-        [annotationArray addObject:annotationCoffee];
-    }
-    for (int i = 0; i < 100; i++) {
-        lat -= (arc4random()%1000) * 0.0001;
-        lng -= (arc4random()%1000) * 0.0001;
-        CLLocationCoordinate2D location2 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotationMuseum = [[HACAnnotationMap alloc]initWithImageName:@"pin_museum" title:[NSString stringWithFormat:@"item %i",i] coordinate:location2];
-        [annotationArray addObject:annotationMuseum];
-    }
-    for (int i = 0; i < 100; i++) {
-        lat += (arc4random()%1000) * 0.0001;
-        lng += (arc4random()%1000) * 0.0001;
-        CLLocationCoordinate2D location3 = CLLocationCoordinate2DMake(lat, lng);
-        HACAnnotationMap *annotationCamping = [[HACAnnotationMap alloc]initWithImageName:@"pin_camping" title:[NSString stringWithFormat:@"item %i",i] coordinate:location3];
-        [annotationArray addObject:annotationCamping];
-    }
+#import "HACMKMapView.h"
 ```
 
-#### Customize cluster view
+#### Map `IBOutlet`
+For using Interface Builder, set class in your MKMapView `HACMKMapView` and make `IBOutlet` of your map, and put name to IBOutlet for example `mapView`.
+#### Delegate for using methods
 ```objective-c
-    self.paddingLegal = 0.0; // Bottom margin "Legal text"
-    self.clusterBackgroundColor = [UIColor redColor]; // Clustered view background color
-    self.clusterBorderColor = [UIColor whiteColor]; // Clustered view border color
-    self.clusterTextColor = [UIColor whiteColor]; // Cluster text color
+self.mapView.mapDelegate = self;
 ```
+#### Create annotations -> `HACAnnotationMap`
+It is easy to use , you must create the following structure in a loop.
+```objective-c
+ NSArray *data = @[
+                      @{kLatitude:@48.47352, kLongitude:@3.87426,  kTitle : @"Title 1", kSubtitle : @"",            kIndex : @0},
+                      @{kLatitude:@52.59758, kLongitude:@-1.93061, kTitle : @"Title 2", kSubtitle : @"Subtitle 2",  kIndex : @1},
+                      @{kLatitude:@48.41370, kLongitude:@3.43531,  kTitle : @"Title 3", kSubtitle : @"Subtitle 3",  kIndex : @2},
+                      @{kLatitude:@48.31921, kLongitude:@18.10184, kTitle : @"Title 4", kSubtitle : @"Subtitle 4",  kIndex : @3},
+                      @{kLatitude:@47.84302, kLongitude:@22.81101, kTitle : @"Title 5", kSubtitle : @"Subtitle 5",  kIndex : @4},
+                      @{kLatitude:@60.88622, kLongitude:@26.83792, kTitle : @"Title 6", kSubtitle : @""          ,  kIndex : @5}
+                      ];
+```
+
 #### The last step 
 The last step would be to call the driver father and pass the array as a parameter to start the process
 ```objective-c
-[self starterWithAnnotations:annotationArray];
+ [self.mapView.coordinateQuadTree buildTreeWithArray:data];
 ```
 
 Enjoy :D
