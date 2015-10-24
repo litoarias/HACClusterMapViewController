@@ -28,6 +28,10 @@
     self.delegate = self;
     self.coordinateQuadTree = [[HACManagerQuadTree alloc] init];
     self.coordinateQuadTree.mapView = self;
+    
+    self.backgroundAnnotation = [UIColor orangeColor];
+    self.borderAnnotation = [UIColor whiteColor];
+    self.textAnnotation = [UIColor whiteColor];
 }
 
 #pragma mark - MKMapViewDelegate
@@ -46,9 +50,10 @@
     static NSString *const HACAnnotatioViewReuseID = @"HACAnnotatioViewReuseID";
     HAClusterAnnotationView *annotationView = (HAClusterAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:HACAnnotatioViewReuseID];
     if (!annotationView) {
-        annotationView = [[HAClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:HACAnnotatioViewReuseID];
+        annotationView = [[HAClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:HACAnnotatioViewReuseID borderColor:self.borderAnnotation backgroundColor:self.backgroundAnnotation textColor:self.textAnnotation];
     }
     annotationView.count = [(HAClusterAnnotation *)annotation count];
+    annotationView.canShowCallout = YES;
     if (annotationView.count == 1) {
         annotationView.image = [UIImage imageNamed:@"pin_default"];
         annotationView.centerOffset = CGPointMake(0,-annotationView.frame.size.height*0.5);
@@ -56,7 +61,6 @@
             [self.mapDelegate viewForAnnotationView:annotationView annotation:annotation];
         }
     }
-    annotationView.canShowCallout = YES;
     
     return annotationView;
 }
@@ -110,6 +114,27 @@
         [self addAnnotations:[toAdd allObjects]];
         [self removeAnnotations:[toRemove allObjects]];
     }];
+}
+
+- (void)layoutSubviews{
+    [super layoutSubviews];
+    
+    for(id view in self.subviews){
+        if([view isKindOfClass:NSClassFromString(@"MKCompassView")])
+            [self moveCompass:view];
+        
+        if ([view isKindOfClass:[UILabel class]]) {
+            [self moveLegal:(UILabel *)view];
+        }
+    }
+}
+
+- (void)moveCompass:(UIView *)view{
+    view.frame = self.compassFrame;
+}
+
+-(void)moveLegal:(UILabel *)legal{
+    legal.frame = self.legalFrame;
 }
 
 @end

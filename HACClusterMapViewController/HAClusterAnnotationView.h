@@ -10,6 +10,11 @@
 
 @interface HAClusterAnnotationView : MKAnnotationView
 
+@property (assign, nonatomic) UIColor *circleBackgroundColor;
+@property (assign, nonatomic) UIColor *circleBorderColor;
+@property (assign, nonatomic) UIColor *circleTextColor;
 @property (assign, nonatomic) NSUInteger count;
+
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier borderColor:(UIColor *)borderColor backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor;
 
 @end

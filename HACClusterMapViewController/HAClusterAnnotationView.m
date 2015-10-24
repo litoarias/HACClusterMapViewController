@@ -36,11 +36,15 @@ CGFloat HACScaledValueForValue(CGFloat value)
 
 @implementation HAClusterAnnotationView
 
-- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier
+
+- (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier borderColor:(UIColor *)borderColor backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
+        self.circleBackgroundColor = backgroundColor;
+        self.circleBorderColor = borderColor;
+        self.circleTextColor = textColor;
         [self setupLabel];
         [self setCount:1];
     }
@@ -51,7 +55,7 @@ CGFloat HACScaledValueForValue(CGFloat value)
 {
     _countLabel = [[UILabel alloc] initWithFrame:self.frame];
     _countLabel.backgroundColor = [UIColor clearColor];
-    _countLabel.textColor = [UIColor whiteColor];
+    _countLabel.textColor = self.circleTextColor;
     _countLabel.textAlignment = NSTextAlignmentCenter;
     _countLabel.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.75];
     _countLabel.shadowOffset = CGSizeMake(0, -1);
@@ -87,8 +91,8 @@ CGFloat HACScaledValueForValue(CGFloat value)
     CGContextSetAllowsAntialiasing(context, true);
     
     UIColor *outerCircleStrokeColor = [UIColor colorWithWhite:0 alpha:0.25];
-    UIColor *innerCircleStrokeColor = [UIColor whiteColor];
-    UIColor *innerCircleFillColor = [UIColor colorWithRed:(255.0 / 255.0) green:(95 / 255.0) blue:(42 / 255.0) alpha:1.0];
+    UIColor *innerCircleStrokeColor = self.circleBorderColor;
+    UIColor *innerCircleFillColor = self.circleBackgroundColor;
     
     CGRect circleFrame = CGRectInset(rect, 4, 4);
     

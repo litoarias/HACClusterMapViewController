@@ -11,6 +11,7 @@
 #import "HAClusterAnnotation.h"
 #import "HAClusterAnnotationView.h"
 
+IB_DESIGNABLE
 @protocol HACMKMapViewDelegate <NSObject>
 
 @optional
@@ -21,6 +22,12 @@
 @interface HACMKMapView : MKMapView <MKMapViewDelegate>
 
 @property (weak, nonatomic) id<HACMKMapViewDelegate>mapDelegate;
+
+@property (nonatomic) IBInspectable UIColor* borderAnnotation;
+@property (nonatomic) IBInspectable UIColor* backgroundAnnotation;
+@property (nonatomic) IBInspectable UIColor* textAnnotation;
+@property (nonatomic) IBInspectable CGRect compassFrame;
+@property (nonatomic) IBInspectable CGRect legalFrame;
 
 @property (strong, nonatomic) HACManagerQuadTree *coordinateQuadTree;
 

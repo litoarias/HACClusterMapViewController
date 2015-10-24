@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41191E5B1BDB83EA0079956B /* IBInspectable.png in Resources */ = {isa = PBXBuildFile; fileRef = 41191E5A1BDB83EA0079956B /* IBInspectable.png */; settings = {ASSET_TAGS = (); }; };
 		419521531BDAC1E0000DA89A /* HACQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214A1BDAC1E0000DA89A /* HACQuadTree.m */; settings = {ASSET_TAGS = (); }; };
 		419521541BDAC1E0000DA89A /* HACManagerQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */; settings = {ASSET_TAGS = (); }; };
 		419521551BDAC1E0000DA89A /* HAClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */; settings = {ASSET_TAGS = (); }; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		41191E5A1BDB83EA0079956B /* IBInspectable.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IBInspectable.png; sourceTree = "<group>"; };
 		419521491BDAC1E0000DA89A /* HACQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACQuadTree.h; sourceTree = "<group>"; };
 		4195214A1BDAC1E0000DA89A /* HACQuadTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HACQuadTree.m; sourceTree = "<group>"; };
 		4195214B1BDAC1E0000DA89A /* HACManagerQuadTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HACManagerQuadTree.h; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				41DECA571B7A935400EBD135 /* LaunchScreen.xib */,
 				4195215F1BDAC27E000DA89A /* data.csv */,
 				41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */,
+				41191E5A1BDB83EA0079956B /* IBInspectable.png */,
 				41DECA541B7A934100EBD135 /* Images.xcassets */,
 				41DECA111B7A920100EBD135 /* Supporting Files */,
 			);
@@ -242,6 +245,7 @@
 				41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */,
 				41DECA551B7A934100EBD135 /* Images.xcassets in Resources */,
 				419521601BDAC27E000DA89A /* data.csv in Resources */,
+				41191E5B1BDB83EA0079956B /* IBInspectable.png in Resources */,
 				4195215C1BDAC1F4000DA89A /* MapViewController.xib in Resources */,
 				41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */,
 			);
