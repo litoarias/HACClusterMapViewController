@@ -36,10 +36,16 @@ Import in your .h HACMKMapView
 
 #### Map `IBOutlet`
 For using Interface Builder, set class in your MKMapView `HACMKMapView` and make `IBOutlet` of your map, and put name to IBOutlet for example `mapView`.
+
 #### Delegate for using methods
 ```objective-c
-self.mapView.mapDelegate = self;
+@interface MapViewController () <HACMKMapViewDelegate>
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.mapView.mapDelegate = self;
+}
 ```
+
 #### Creat tree struct
 It is easy to use , you must create the following structure in a loop.
 ```objective-c
@@ -77,7 +83,18 @@ With delegate methods we can set custom images of annotations or know what index
 }
 
 ```
+#### Customize
+### Programmatically
+```objective-c
+    self.mapView.backgroundAnnotation = [UIColor redColor];
+    self.mapView.borderAnnotation = [UIColor whiteColor];
+    self.mapView.textAnnotation = [UIColor whiteColor];
+    self.mapView.compassFrame = CGRectMake(10, 10, 25, 25);
+    self.mapView.legalFrame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, CGRectGetHeight([UIScreen mainScreen].bounds)-50, 50, 50);
+```
 
+### Interface Builder
+![Preview](https://github.com/litoarias/HACClusterMapViewController/blob/master/ExampleApp/IBInspectable.png)
 Enjoy :D
 
 ## Contributing
