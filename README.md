@@ -95,6 +95,7 @@ With delegate methods we can set custom images of annotations or know what index
 
 ### Interface Builder
 ![Preview](https://github.com/litoarias/HACClusterMapViewController/blob/master/ExampleApp/IBInspectable.png)
+
 Enjoy :D
 
 ## Contributing
