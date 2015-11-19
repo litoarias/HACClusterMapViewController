@@ -16,6 +16,8 @@ IB_DESIGNABLE
 
 @optional
 -(void)viewForAnnotationView:(HAClusterAnnotationView *)annotationView annotation:(HAClusterAnnotation *)annotation;
+-(void)viewForAnnotationView:(HAClusterAnnotationView *)annotationView clusteredAnnotation:(HAClusterAnnotation *)annotation;
+-(UIColor*)fillColorForAnnotation:(HAClusterAnnotation *)annotation;
 -(void)didSelectAnnotationView:(HAClusterAnnotation *)annotation;
 @end
 
@@ -26,6 +28,7 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable UIColor* borderAnnotation;
 @property (nonatomic) IBInspectable UIColor* backgroundAnnotation;
 @property (nonatomic) IBInspectable UIColor* textAnnotation;
+@property (nonatomic) IBInspectable UIImage* defaultImage;
 @property (nonatomic) IBInspectable CGRect compassFrame;
 @property (nonatomic) IBInspectable CGRect legalFrame;
 

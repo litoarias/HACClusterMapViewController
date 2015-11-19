@@ -27,11 +27,13 @@
 -(void)defaultInit{
     self.delegate = self;
     self.coordinateQuadTree = [[HACManagerQuadTree alloc] init];
+    self.coordinateQuadTree.delegate = self;
     self.coordinateQuadTree.mapView = self;
     
     self.backgroundAnnotation = [UIColor orangeColor];
     self.borderAnnotation = [UIColor whiteColor];
     self.textAnnotation = [UIColor whiteColor];
+    self.defaultImage = [UIImage imageNamed:@"pin_default"];
 }
 
 #pragma mark - MKMapViewDelegate
@@ -44,24 +46,53 @@
     }];
 }
 
+
+
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     static NSString *const HACAnnotatioViewReuseID = @"HACAnnotatioViewReuseID";
     HAClusterAnnotationView *annotationView = (HAClusterAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:HACAnnotatioViewReuseID];
+    
+    UIColor * fillColor= Nil;
     if (!annotationView) {
-        annotationView = [[HAClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:HACAnnotatioViewReuseID borderColor:self.borderAnnotation backgroundColor:self.backgroundAnnotation textColor:self.textAnnotation];
+        
+        if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(fillColorForAnnotation:)]) {
+            fillColor = [self.mapDelegate fillColorForAnnotation:annotation];
+            
+        }
+        if (!fillColor) {
+            fillColor= self.backgroundAnnotation;
+        }
+        annotationView = [[HAClusterAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:HACAnnotatioViewReuseID borderColor:self.borderAnnotation backgroundColor:fillColor textColor:self.textAnnotation];
+    }else{
+        if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(fillColorForAnnotation:)]) {
+            fillColor = [self.mapDelegate fillColorForAnnotation:annotation];
+            
+        }
+        if (!fillColor) {
+            fillColor= self.backgroundAnnotation;
+        }
+        annotationView.circleBackgroundColor = fillColor;
+
     }
+    annotationView.circleBorderColor = self.borderAnnotation;
+    annotationView.circleTextColor = self.textAnnotation;
     annotationView.count = [(HAClusterAnnotation *)annotation count];
     annotationView.canShowCallout = YES;
     if (annotationView.count == 1) {
-        annotationView.image = [UIImage imageNamed:@"pin_default"];
-        annotationView.centerOffset = CGPointMake(0,-annotationView.frame.size.height*0.5);
         if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(viewForAnnotationView:annotation:)]) {
             [self.mapDelegate viewForAnnotationView:annotationView annotation:annotation];
+        }else{
+            annotationView.image = self.defaultImage;
+        }
+        annotationView.centerOffset = CGPointMake(0,-annotationView.frame.size.height*0.5);
+    }else{
+        if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(viewForAnnotationView:clusteredAnnotation:)]) {
+            [self.mapDelegate viewForAnnotationView:annotationView clusteredAnnotation:annotation];
         }
     }
-    
+    [annotationView setNeedsLayout];
     return annotationView;
 }
 
@@ -78,7 +109,7 @@
             [annotation updateSubtitleIfNeeded];
         }
         if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(didSelectAnnotationView:)]) {
-            [self.mapDelegate didSelectAnnotationView:annotation];
+            [self.mapDelegate didSelectAnnotationView:view];
         }
     }
 }
