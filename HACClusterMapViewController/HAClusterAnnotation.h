@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "MultiRowAnnotationProtocol.h"
+//#import "MultiRowAnnotationProtocol.h"
 
 @interface HAClusterAnnotation : NSObject <MKAnnotation>
 

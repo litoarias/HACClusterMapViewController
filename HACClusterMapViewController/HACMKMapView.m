@@ -27,7 +27,6 @@
 -(void)defaultInit{
     self.delegate = self;
     self.coordinateQuadTree = [[HACManagerQuadTree alloc] init];
-    self.coordinateQuadTree.delegate = self;
     self.coordinateQuadTree.mapView = self;
     
     self.backgroundAnnotation = [UIColor orangeColor];

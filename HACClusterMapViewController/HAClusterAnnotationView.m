@@ -99,10 +99,19 @@ CGFloat HACScaledValueForValue(CGFloat value)
         self.countLabel.frame = HACenterRect(newLabelBounds, HACRectCenter(newBounds));
         self.countLabel.text = [@(_count) stringValue];
         
-        [self setNeedsDisplay];
+        
     }else{
+        CGRect newBounds = CGRectMake(0, 0, roundf(44 * HACScaledValueForValue(count)), roundf(44 * HACScaledValueForValue(count)));
+        self.frame = HACenterRect(newBounds, self.center);
+        
+        CGRect newLabelBounds = CGRectMake(0, 0, newBounds.size.width / 1.3, newBounds.size.height / 1.3);
+        self.countLabel.frame = HACenterRect(newLabelBounds, HACRectCenter(newBounds));
+
+        _countLabel.text=@"";
         _countLabel.hidden = YES;
     }
+    [self setNeedsLayout];
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect
@@ -111,12 +120,18 @@ CGFloat HACScaledValueForValue(CGFloat value)
     
     CGContextSetAllowsAntialiasing(context, true);
     
-    UIColor *outerCircleStrokeColor;
-    UIColor *innerCircleStrokeColor;
+    UIColor *outerCircleStrokeColor = [UIColor colorWithWhite:0 alpha:0.25];
+    UIColor *innerCircleStrokeColor = self.circleBorderColor;
+
     UIColor *innerCircleFillColor;
     
     if ([self.annotation isKindOfClass:[HAClusterAnnotation class]]){
+        if (((HAClusterAnnotation*)self.annotation).count==1){
+        
         innerCircleFillColor= ((HAClusterAnnotation*)self.annotation).fillColor ;
+        }else{
+                innerCircleFillColor= self.circleBackgroundColor;
+        }
     }else{
         innerCircleFillColor= self.circleBackgroundColor;
     }
