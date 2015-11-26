@@ -199,7 +199,7 @@ float HACCellSizeForZoomScale(MKZoomScale zoomScale)
                 CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(totalX / count, totalY / count);
                 HAClusterAnnotation *annotation = [[HAClusterAnnotation alloc] initWithCoordinate:coordinate count:count index:[[indexes lastObject] integerValue]];
                 annotation.indexes = [[NSMutableArray alloc]initWithArray:indexes];
-                NSLog (@" %@, %i", annotation.title, annotation.indexes.count);
+                //DLog (@" %@, %i", annotation.title, annotation.indexes.count);
                 [clusteredAnnotations addObject:annotation];
                 if (self.delegate && [self.delegate respondsToSelector:@selector(annotationAddedToCluster:)]) {
                     [self.delegate annotationAddedToCluster:annotation];
