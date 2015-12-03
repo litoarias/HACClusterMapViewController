@@ -34,8 +34,13 @@
 //                      @{kLatitude:@47.84302, kLongitude:@22.81101, kTitle : @"Title 5", kSubtitle : @"Subtitle 5",  kIndex : @4},
 //                      @{kLatitude:@60.88622, kLongitude:@26.83792, kTitle : @"Title 6", kSubtitle : @""          ,  kIndex : @5}
 //                      ];
+//    
 //    [self.mapView.coordinateQuadTree buildTreeWithArray:data];
-    
+    self.mapView.backgroundAnnotation = [UIColor redColor];
+    self.mapView.borderAnnotation = [UIColor whiteColor];
+    self.mapView.textAnnotation = [UIColor whiteColor];
+    self.mapView.compassFrame = CGRectMake(10, 10, 25, 25);
+    self.mapView.legalFrame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, CGRectGetHeight([UIScreen mainScreen].bounds)-50, 50, 50);
 }
 
 # pragma mark - HACMKMapViewDelegate
