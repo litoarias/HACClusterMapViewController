@@ -41,6 +41,7 @@
     [[NSOperationQueue new] addOperationWithBlock:^{
         double scale = self.bounds.size.width / self.visibleMapRect.size.width;
         NSArray *annotations = [self.coordinateQuadTree clusteredAnnotationsWithinMapRect:mapView.visibleMapRect withZoomScale:scale];
+        //TODO: Avoid removing non clustered annotation
         [self updateMapViewAnnotationsWithAnnotations:annotations];
     }];
 }
@@ -49,6 +50,8 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    if (![annotation isKindOfClass:[HAClusterAnnotation class]])
         return nil;
     static NSString *const HACAnnotatioViewReuseID = @"HACAnnotatioViewReuseID";
     HAClusterAnnotationView *annotationView = (HAClusterAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:HACAnnotatioViewReuseID];
