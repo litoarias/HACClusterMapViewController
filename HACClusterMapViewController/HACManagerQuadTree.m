@@ -100,12 +100,15 @@ float HACCellSizeForZoomScale(MKZoomScale zoomScale)
         example=YES;
         NSArray *data = [self read];
         NSInteger count = data.count - 1;
-        HACQuadTreeNodeData *dataArray = malloc(sizeof(HACQuadTreeNodeData) * count);
+        HACQuadTreeNodeData *dataArray = calloc(count, sizeof(HACQuadTreeNodeData));
         for (NSInteger i = 0; i < count; i++) {
             dataArray[i] = HACDataFromLine(data[i]);
         }
         HACBoundingBox world = HACBoundingBoxMake(-185, -185, 185, 185);
         _root = HACQuadTreeBuildWithData(dataArray, (int)count, world, 4);
+        
+        free(dataArray);
+        dataArray = NULL;
     }
 }
 
@@ -185,15 +188,25 @@ float HACCellSizeForZoomScale(MKZoomScale zoomScale)
             if (count == 1) {
                 CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(totalX, totalY);
                 HAClusterAnnotation *annotation = [[HAClusterAnnotation alloc] initWithCoordinate:coordinate count:count index:[[indexes lastObject] integerValue]];
+                annotation.indexes = [[NSMutableArray alloc]initWithArray:indexes];
                 annotation.title = [titles lastObject];
                 ![[subtitles lastObject]isEqualToString:@""] ? (annotation.subtitle = [subtitles lastObject]) : (annotation.subtitle = nil);
                 [clusteredAnnotations addObject:annotation];
+                
+                if (self.delegate && [self.delegate respondsToSelector:@selector(annotationAddedToCluster:)]) {
+                    [self.delegate annotationAddedToCluster:annotation];
+                }
             }
             
             if (count > 1) {
                 CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(totalX / count, totalY / count);
                 HAClusterAnnotation *annotation = [[HAClusterAnnotation alloc] initWithCoordinate:coordinate count:count index:[[indexes lastObject] integerValue]];
+                annotation.indexes = [[NSMutableArray alloc]initWithArray:indexes];
+                //DLog (@" %@, %i", annotation.title, annotation.indexes.count);
                 [clusteredAnnotations addObject:annotation];
+                if (self.delegate && [self.delegate respondsToSelector:@selector(annotationAddedToCluster:)]) {
+                    [self.delegate annotationAddedToCluster:annotation];
+                }
             }
         }
     }
