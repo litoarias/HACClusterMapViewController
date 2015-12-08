@@ -127,7 +127,7 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
             [annotation updateSubtitleIfNeeded];
         }
         if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(didDeselectAnnotationView:)]) {
-            [self.mapDelegate didDeselectAnnotationView:view];
+            [self.mapDelegate didDeselectAnnotationView:(HAClusterAnnotationView *)view];
         }
     }
 
@@ -166,6 +166,13 @@ didDeselectAnnotationView:(MKAnnotationView *)view{
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self addAnnotations:[toAdd allObjects]];
         [self removeAnnotations:[toRemove allObjects]];
+        //Oggerschummer
+        
+        if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(didFinishAddingAnnotations)]) {
+            [self.mapDelegate didFinishAddingAnnotations];
+            
+        }
+        
     }];
 }
 
