@@ -36,9 +36,9 @@
 //                      ];
 //    
 //    [self.mapView.coordinateQuadTree buildTreeWithArray:data];
-    self.mapView.backgroundAnnotation = [UIColor redColor];
-    self.mapView.borderAnnotation = [UIColor whiteColor];
-    self.mapView.textAnnotation = [UIColor whiteColor];
+//    self.mapView.backgroundAnnotation = [UIColor redColor];
+//    self.mapView.borderAnnotation = [UIColor whiteColor];
+//    self.mapView.textAnnotation = [UIColor whiteColor];
     self.mapView.compassFrame = CGRectMake(10, 10, 25, 25);
     self.mapView.legalFrame = CGRectMake(CGRectGetWidth([UIScreen mainScreen].bounds)-50, CGRectGetHeight([UIScreen mainScreen].bounds)-50, 50, 50);
 }
@@ -56,8 +56,8 @@
     }
 }
 
--(void)didSelectAnnotationView:(HAClusterAnnotation *)annotation{
-    NSLog(@"You ara select annotation index %ld", (long)annotation.index);
+-(void)didSelectAnnotationView:(HAClusterAnnotation *)annotationView{
+    NSLog(@"You ara select annotation index %ld", (long)annotationView.index);
 }
 
 @end

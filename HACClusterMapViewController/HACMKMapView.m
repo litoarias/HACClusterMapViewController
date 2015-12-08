@@ -104,14 +104,14 @@
     }
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(HAClusterAnnotationView *)view{
-    if ([view.annotation isKindOfClass:[HAClusterAnnotation class]]){
-        HAClusterAnnotation *annotation = (HAClusterAnnotation *)view.annotation;
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(HAClusterAnnotation *)view{
+    if ([view isKindOfClass:[HAClusterAnnotation class]]){
+        HAClusterAnnotation *annotation = (HAClusterAnnotation *)view;
         if (annotation.count == 1) {
             [annotation updateSubtitleIfNeeded];
         }
         if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(didSelectAnnotationView:)]) {
-            [self.mapDelegate didSelectAnnotationView:view];
+            [self.mapDelegate didSelectAnnotationView:annotation];
         }
     }
 }
