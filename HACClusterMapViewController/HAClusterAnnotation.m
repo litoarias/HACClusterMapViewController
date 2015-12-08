@@ -15,7 +15,7 @@
     self = [super init];
     if (self) {
         _coordinate = coordinate;
-        _title = [NSString stringWithFormat:@"%ld items in this area", (long)count];
+        _title = [NSString stringWithFormat:@"%ld itmes in this area", (long)count];
         _count = count;
         _index = index;
     }
