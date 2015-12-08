@@ -100,12 +100,15 @@ float HACCellSizeForZoomScale(MKZoomScale zoomScale)
         example=YES;
         NSArray *data = [self read];
         NSInteger count = data.count - 1;
-        HACQuadTreeNodeData *dataArray = malloc(sizeof(HACQuadTreeNodeData) * count);
+        HACQuadTreeNodeData *dataArray = calloc(count, sizeof(HACQuadTreeNodeData));
         for (NSInteger i = 0; i < count; i++) {
             dataArray[i] = HACDataFromLine(data[i]);
         }
         HACBoundingBox world = HACBoundingBoxMake(-185, -185, 185, 185);
         _root = HACQuadTreeBuildWithData(dataArray, (int)count, world, 4);
+        
+        free(dataArray);
+        dataArray = NULL;
     }
 }
 
