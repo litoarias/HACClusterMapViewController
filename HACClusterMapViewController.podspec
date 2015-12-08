@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HACClusterMapViewController"
-  s.version      = "2.0"
+  s.version      = "2.1"
   s.summary      = "HACClusterMapViewController iOS 7 >."
   s.description  = <<-DESC
     HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
