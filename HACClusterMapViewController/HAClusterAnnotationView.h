@@ -7,7 +7,6 @@
 //
 
 #import <MapKit/MapKit.h>
-#import "HAClusterAnnotation.h"
 
 @interface HAClusterAnnotationView : MKAnnotationView
 

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-//#import "MultiRowAnnotationProtocol.h"
 
 @interface HAClusterAnnotation : NSObject <MKAnnotation>
 
@@ -16,9 +15,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
 @property (assign, nonatomic) NSInteger count;
-@property (assign, nonatomic) UIColor* fillColor;
 @property (assign, nonatomic) NSInteger index;
-@property (copy, nonatomic) NSMutableArray *indexes;
 
 - (id)initWithCoordinate:(CLLocationCoordinate2D)coordinate count:(NSInteger)count index:(NSInteger)index;
 
