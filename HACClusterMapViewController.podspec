@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors          = { "litoarias" => "lito.arias.cervero@gmail.com" }
   s.social_media_url = 'https://github.com/litoarias/HACClusterMapViewController'
   s.platform         = :ios, "7.0"
-  s.source           = { :git => "https://github.com/litoarias/HACClusterMapViewController.git", :tag => "2.0" }
+  s.source           = { :git => "https://github.com/litoarias/HACClusterMapViewController.git", :tag => "2.2" }
   s.source_files     = "HACClusterMapViewController"
   s.requires_arc     = true
 
