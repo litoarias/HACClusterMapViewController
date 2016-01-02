@@ -35,7 +35,6 @@ CGFloat HACScaledValueForValue(CGFloat value)
 @end
 
 @implementation HAClusterAnnotationView
-
 //-(void) prepareForReuse{
 //    [super prepareForReuse];
 //    self.backgroundColor = [UIColor clearColor];
@@ -56,6 +55,7 @@ CGFloat HACScaledValueForValue(CGFloat value)
 //
 //    
 //}
+
 
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier borderColor:(UIColor *)borderColor backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor
 {
