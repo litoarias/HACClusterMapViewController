@@ -2,9 +2,7 @@
 <img src="https://img.shields.io/twitter/url/https/github.com/litoarias/HACClusterMapViewController.svg?style=social"><br>
 HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
 Will require us to come up with an ultra quick data structure built for the task. We will need to build it in C for it to be performant.
-This version 2.1 has been derived from the original authors version 2.0 , adding more flexibility in the delegates and the display of the annotations as
-well as correcting some issues.
-Podspec has not been changed, so please install manually
+This version 2.2 has been derived from the original authors version 2.0 , adding more flexibility in the delegates and the display of the annotations as well as correcting some issues.
 
 <img src="https://img.shields.io/github/issues/litoarias/HACClusterMapViewController.svg?style=flat-square">
 <img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square">
