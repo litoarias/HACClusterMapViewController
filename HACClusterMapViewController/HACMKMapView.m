@@ -104,9 +104,9 @@
     }
 }
 
-- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(HAClusterAnnotation *)view{
-    if ([view isKindOfClass:[HAClusterAnnotation class]]){
-        HAClusterAnnotation *annotation = (HAClusterAnnotation *)view;
+- (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view{
+    if ([view.annotation isKindOfClass:[HAClusterAnnotation class]]){
+        HAClusterAnnotation *annotation = (HAClusterAnnotation *)view.annotation;
         if (annotation.count == 1) {
             [annotation updateSubtitleIfNeeded];
         }
@@ -116,24 +116,16 @@
     }
 }
 
-- (void)mapView:(MKMapView *)mapView
-didDeselectAnnotationView:(MKAnnotationView *)view{
-    
+- (void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
     if ([view.annotation isKindOfClass:[HAClusterAnnotation class]]){
         HAClusterAnnotation *annotation = (HAClusterAnnotation *)view.annotation;
-        
-        
         if (annotation.count == 1) {
             [annotation updateSubtitleIfNeeded];
         }
         if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(didDeselectAnnotationView:)]) {
             [self.mapDelegate didDeselectAnnotationView:(HAClusterAnnotationView *)view];
         }
-    }
-
-    
-    
-    
+    }  
 }
 
 - (void)addBounceAnnimationToView:(UIView *)view{
