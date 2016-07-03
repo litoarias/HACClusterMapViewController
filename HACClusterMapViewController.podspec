@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "HACClusterMapViewController"
-  s.version      = "2.3"
+  s.version      = "2.4"
   s.summary      = "HACClusterMapViewController iOS 7 >."
   s.description  = <<-DESC
     HACClusterMapViewController class is written in Objective-C and facilitates the use of maps when they have many pins that show.
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.authors          = { "litoarias" => "lito.arias.cervero@gmail.com" }
   s.social_media_url = 'https://github.com/litoarias/HACClusterMapViewController'
   s.platform         = :ios, "7.0"
-  s.source           = { :git => "https://github.com/litoarias/HACClusterMapViewController.git", :tag => "2.3" }
+  s.source           = { :git => "https://github.com/litoarias/HACClusterMapViewController.git", :tag => "2.4" }
   s.source_files     = "HACClusterMapViewController"
   s.requires_arc     = true
 
