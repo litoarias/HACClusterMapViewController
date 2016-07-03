@@ -100,9 +100,10 @@ bool HACQuadTreeNodeInsertData(HACQuadTreeNode* node, HACQuadTreeNodeData data)
 
 void HACQuadTreeGatherDataInRange(HACQuadTreeNode* node, HACBoundingBox range, HACDataReturnBlock block)
 {
-    if (!HACBoundingBoxIntersectsBoundingBox(node->boundingBox, range)) {
-        return;
-    }
+    if (!node) return;
+    
+    if (!HACBoundingBoxIntersectsBoundingBox(node->boundingBox, range)) return;
+    
     
     for (int i = 0; i < node->count; i++) {
         if (HACBoundingBoxContainsData(range, node->points[i])) {
