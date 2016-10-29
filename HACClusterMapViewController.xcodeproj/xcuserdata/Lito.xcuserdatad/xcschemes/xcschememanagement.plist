@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>HACClusterMapViewController.xcscheme</key>
+		<key>HACClusterMapVIewController.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>HACClusterMapViewController.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4113D8DD1DC4D15400F78247</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>41DECA0D1B7A920100EBD135</key>
 		<dict>
 			<key>primary</key>
