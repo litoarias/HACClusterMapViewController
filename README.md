@@ -24,6 +24,10 @@ This version 2.2 has been derived from the original authors version 2.0 , adding
 
     pod 'HACClusterMapViewController'
 
+####Carthage:
+
+    github "litoarias/HACClusterMapViewController"
+
 ####Manual install:
 - Copy `HACQuadTree.h` `HACQuadTree.m` `HACManagerQuadTree.h` `HACManagerQuadTree.m` `HAClusterAnnotation.h` `HAClusterAnnotation.m` `HAClusterAnnotationView.h` `HAClusterAnnotationView.m` and `HACMKMapView.h` `HACMKMapView.m` to your project
 - Manual install [HACClusterMapViewController](https://github.com/litoarias/HACClusterMapViewController/#manual-install)
