@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "413760931DC625D800EA0799"
-               BuildableName = "HACClusterMapView.framework"
-               BlueprintName = "HACClusterMapView"
+               BlueprintIdentifier = "41DECA0D1B7A920100EBD135"
+               BuildableName = "ClusterMapViewController.app"
+               BlueprintName = "ClusterMapViewController"
                ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "41DECA0D1B7A920100EBD135"
+            BuildableName = "ClusterMapViewController.app"
+            BlueprintName = "ClusterMapViewController"
+            ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "413760931DC625D800EA0799"
-            BuildableName = "HACClusterMapView.framework"
-            BlueprintName = "HACClusterMapView"
+            BlueprintIdentifier = "41DECA0D1B7A920100EBD135"
+            BuildableName = "ClusterMapViewController.app"
+            BlueprintName = "ClusterMapViewController"
             ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "413760931DC625D800EA0799"
-            BuildableName = "HACClusterMapView.framework"
-            BlueprintName = "HACClusterMapView"
+            BlueprintIdentifier = "41DECA0D1B7A920100EBD135"
+            BuildableName = "ClusterMapViewController.app"
+            BlueprintName = "ClusterMapViewController"
             ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
