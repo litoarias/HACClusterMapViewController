@@ -10,8 +10,6 @@
 
 #import "HACQuadTree.h"
 #import "HACManagerQuadTree.h"
-#import "HACClusterAnnotation.h"
-#import "HACClusterAnnotationView.h"
 #import "HACMKMapView.h"
 
 //! Project version number for HACClusterMapViewController.
