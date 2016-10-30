@@ -19,12 +19,22 @@
 		4195215B1BDAC1F4000DA89A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521591BDAC1F4000DA89A /* MapViewController.m */; };
 		4195215C1BDAC1F4000DA89A /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4195215A1BDAC1F4000DA89A /* MapViewController.xib */; };
 		419521601BDAC27E000DA89A /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4195215F1BDAC27E000DA89A /* data.csv */; };
-		41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */; };
 		41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA481B7A931900EBD135 /* AppDelegate.m */; };
 		41DECA531B7A932700EBD135 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA511B7A932700EBD135 /* main.m */; };
 		41DECA551B7A934100EBD135 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA541B7A934100EBD135 /* Images.xcassets */; };
 		41DECA591B7A935400EBD135 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA571B7A935400EBD135 /* LaunchScreen.xib */; };
 		41DECA8C1B7B214B00EBD135 /* hacclusterviewcontroller.gif in Resources */ = {isa = PBXBuildFile; fileRef = 41DECA8B1B7B214B00EBD135 /* hacclusterviewcontroller.gif */; };
+		41FF49BB1DC5F76D0064D9A8 /* HACQuadTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 419521491BDAC1E0000DA89A /* HACQuadTree.h */; };
+		41FF49BC1DC5F7720064D9A8 /* HACQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214A1BDAC1E0000DA89A /* HACQuadTree.m */; };
+		41FF49BD1DC5F7720064D9A8 /* HACManagerQuadTree.h in Headers */ = {isa = PBXBuildFile; fileRef = 4195214B1BDAC1E0000DA89A /* HACManagerQuadTree.h */; };
+		41FF49BE1DC5F7720064D9A8 /* HACManagerQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */; };
+		41FF49BF1DC5F7720064D9A8 /* HAClusterAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4195214D1BDAC1E0000DA89A /* HAClusterAnnotation.h */; };
+		41FF49C01DC5F7720064D9A8 /* HAClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */; };
+		41FF49C11DC5F7720064D9A8 /* HAClusterAnnotationView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4195214F1BDAC1E0000DA89A /* HAClusterAnnotationView.h */; };
+		41FF49C21DC5F7720064D9A8 /* HAClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */; };
+		41FF49C31DC5F7720064D9A8 /* HACMKMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 419521511BDAC1E0000DA89A /* HACMKMapView.h */; };
+		41FF49C41DC5F7720064D9A8 /* HACMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521521BDAC1E0000DA89A /* HACMKMapView.m */; };
+		41FF49C81DC5F7860064D9A8 /* HACClusterMapViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41DECA271B7A920100EBD135 /* HACClusterMapViewControllerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +225,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FF49BB1DC5F76D0064D9A8 /* HACQuadTree.h in Headers */,
+				41FF49C31DC5F7720064D9A8 /* HACMKMapView.h in Headers */,
+				41FF49BF1DC5F7720064D9A8 /* HAClusterAnnotation.h in Headers */,
+				41FF49C11DC5F7720064D9A8 /* HAClusterAnnotationView.h in Headers */,
+				41FF49BD1DC5F7720064D9A8 /* HACManagerQuadTree.h in Headers */,
 				4113D8E21DC4D15400F78247 /* HACClusterMapVIewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +370,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41FF49C41DC5F7720064D9A8 /* HACMKMapView.m in Sources */,
+				41FF49BC1DC5F7720064D9A8 /* HACQuadTree.m in Sources */,
+				41FF49C21DC5F7720064D9A8 /* HAClusterAnnotationView.m in Sources */,
+				41FF49BE1DC5F7720064D9A8 /* HACManagerQuadTree.m in Sources */,
+				41FF49C01DC5F7720064D9A8 /* HAClusterAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,7 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				41DECA281B7A920100EBD135 /* HACClusterMapViewControllerTests.m in Sources */,
+				41FF49C81DC5F7860064D9A8 /* HACClusterMapViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +635,7 @@
 				4113D8E81DC4D15400F78247 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41DECA091B7A920100EBD135 /* Build configuration list for PBXProject "HACClusterMapViewController" */ = {
 			isa = XCConfigurationList;
