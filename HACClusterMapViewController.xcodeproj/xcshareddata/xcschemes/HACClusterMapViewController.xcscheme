@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "41D4FB2D1DC63119009E450F"
+               BlueprintIdentifier = "4144E2141DC63AC400A3DFD8"
                BuildableName = "HACClusterMapViewController.framework"
                BlueprintName = "HACClusterMapViewController"
                ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "41D4FB2D1DC63119009E450F"
+            BlueprintIdentifier = "4144E2141DC63AC400A3DFD8"
             BuildableName = "HACClusterMapViewController.framework"
             BlueprintName = "HACClusterMapViewController"
             ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "41D4FB2D1DC63119009E450F"
+            BlueprintIdentifier = "4144E2141DC63AC400A3DFD8"
             BuildableName = "HACClusterMapViewController.framework"
             BlueprintName = "HACClusterMapViewController"
             ReferencedContainer = "container:HACClusterMapViewController.xcodeproj">

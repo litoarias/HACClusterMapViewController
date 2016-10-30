@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>HACClusterMapViewControllerTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -28,6 +33,11 @@
 			<true/>
 		</dict>
 		<key>413760931DC625D800EA0799</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4144E2141DC63AC400A3DFD8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
