@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "HACQuadTree.h"
+#import "HACManagerQuadTree.h"
+#import "HACClusterAnnotation.h"
+#import "HACClusterAnnotationView.h"
+#import "HACMKMapView.h"
+
 //! Project version number for HACClusterMapViewController.
 FOUNDATION_EXPORT double HACClusterMapViewControllerVersionNumber;
 
