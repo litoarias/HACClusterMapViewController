@@ -46,8 +46,6 @@
     }];
 }
 
-
-
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
@@ -126,6 +124,13 @@
             [self.mapDelegate didDeselectAnnotationView:(HAClusterAnnotationView *)view];
         }
     }  
+}
+
+- (MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id <MKOverlay>)overlay {
+    if (self.mapDelegate && [self.mapDelegate respondsToSelector:@selector(mapView:rendererForOverlay:)])
+        return [self.mapDelegate mapView:self rendererForOverlay:overlay];
+    else
+        return nil;
 }
 
 - (void)addBounceAnnimationToView:(UIView *)view{
