@@ -15,7 +15,7 @@
 @property (copy, nonatomic) NSString *title;
 @property (copy, nonatomic) NSString *subtitle;
 @property (assign, nonatomic) NSInteger count;
-@property (retain, nonatomic) UIColor* fillColor;
+@property (assign, nonatomic) UIColor* fillColor;
 @property (assign, nonatomic) NSInteger index;
 @property (copy, nonatomic) NSMutableArray *indexes;
 
