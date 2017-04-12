@@ -21,11 +21,6 @@
 		4144E2281DC63B2200A3DFD8 /* HAClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */; };
 		4144E2291DC63B2200A3DFD8 /* HACMKMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = 419521511BDAC1E0000DA89A /* HACMKMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4144E22A1DC63B2200A3DFD8 /* HACMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521521BDAC1E0000DA89A /* HACMKMapView.m */; };
-		419521531BDAC1E0000DA89A /* HACQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214A1BDAC1E0000DA89A /* HACQuadTree.m */; };
-		419521541BDAC1E0000DA89A /* HACManagerQuadTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214C1BDAC1E0000DA89A /* HACManagerQuadTree.m */; };
-		419521551BDAC1E0000DA89A /* HAClusterAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4195214E1BDAC1E0000DA89A /* HAClusterAnnotation.m */; };
-		419521561BDAC1E0000DA89A /* HAClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521501BDAC1E0000DA89A /* HAClusterAnnotationView.m */; };
-		419521571BDAC1E0000DA89A /* HACMKMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521521BDAC1E0000DA89A /* HACMKMapView.m */; };
 		4195215B1BDAC1F4000DA89A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419521591BDAC1F4000DA89A /* MapViewController.m */; };
 		4195215C1BDAC1F4000DA89A /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4195215A1BDAC1F4000DA89A /* MapViewController.xib */; };
 		419521601BDAC27E000DA89A /* data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 4195215F1BDAC27E000DA89A /* data.csv */; };
@@ -385,12 +380,7 @@
 			files = (
 				41DECA531B7A932700EBD135 /* main.m in Sources */,
 				41DECA4C1B7A931900EBD135 /* AppDelegate.m in Sources */,
-				419521551BDAC1E0000DA89A /* HAClusterAnnotation.m in Sources */,
 				4195215B1BDAC1F4000DA89A /* MapViewController.m in Sources */,
-				419521541BDAC1E0000DA89A /* HACManagerQuadTree.m in Sources */,
-				419521561BDAC1E0000DA89A /* HAClusterAnnotationView.m in Sources */,
-				419521571BDAC1E0000DA89A /* HACMKMapView.m in Sources */,
-				419521531BDAC1E0000DA89A /* HACQuadTree.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,6 +630,7 @@
 				4144E2201DC63AC400A3DFD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		41DECA091B7A920100EBD135 /* Build configuration list for PBXProject "HACClusterMapViewController" */ = {
 			isa = XCConfigurationList;
