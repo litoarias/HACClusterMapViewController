@@ -37,28 +37,6 @@ CGFloat HACScaledValueForValue(CGFloat value)
 @implementation HAClusterAnnotationView
 
 
-//-(void) prepareForReuse{
-//    [super prepareForReuse];
-//    self.backgroundColor = [UIColor clearColor];
-//    self.circleBackgroundColor = [UIColor clearColor];
-//    self.circleBorderColor = [UIColor clearColor];
-//    self.circleTextColor = [UIColor blackColor];
-//    _countLabel.backgroundColor = [UIColor clearColor];
-//    _countLabel.textColor = self.circleTextColor;
-//    _countLabel.textAlignment = NSTextAlignmentCenter;
-//    _countLabel.shadowColor = [UIColor clearColor];
-//    _countLabel.shadowOffset = CGSizeMake(0, 0);
-//    _countLabel.adjustsFontSizeToFitWidth = YES;
-//    _countLabel.numberOfLines = 1;
-//    _countLabel.font = [UIFont systemFontOfSize:12];
-//    _countLabel.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-//
-//    [self setCount:1];
-//
-//    
-//}
-
-
 - (id)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier borderColor:(UIColor *)borderColor backgroundColor:(UIColor *)backgroundColor textColor:(UIColor *)textColor
 {
     self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
