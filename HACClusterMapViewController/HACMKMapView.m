@@ -38,7 +38,7 @@
 #pragma mark - MKMapViewDelegate
 
 - (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-    [[NSOperationQueue new] addOperationWithBlock:^{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         double scale = self.bounds.size.width / self.visibleMapRect.size.width;
         NSArray *annotations = [self.coordinateQuadTree clusteredAnnotationsWithinMapRect:mapView.visibleMapRect withZoomScale:scale];
         //TODO: Avoid removing non clustered annotation
